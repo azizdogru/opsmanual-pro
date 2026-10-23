@@ -31,7 +31,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/boutique-gym-fitness-studio-sop-handbook-template" className="hover:text-emerald-400">
+                <Link href="/gym-fitness-studio-sop-handbook-template" className="hover:text-emerald-400">
                   Gym & Fitness Studio Manual
                 </Link>
               </li>
@@ -41,7 +41,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/airbnb-vacation-rental-property-management-sop-template" className="hover:text-emerald-400">
+                <Link href="/airbnb-short-term-rental-sop-handbook-template" className="hover:text-emerald-400">
                   Airbnb Property Management
                 </Link>
               </li>
