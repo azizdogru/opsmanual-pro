@@ -21,23 +21,23 @@ export function generateSopAuditPdf(kit: IndustrySopKit): Uint8Array {
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(15);
-  doc.text('DAILY OPERATIONAL AUDIT & SHIFT VERIFICATION PUNCHLIST', margin, 32);
+  doc.text('DAILY OPERATIONAL AUDIT & SHIFT VERIFICATION PUNCHLIST', margin, 30);
 
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8.5);
+  doc.setFontSize(8);
   doc.setTextColor(148, 163, 184);
   doc.text(
-    `Official Facility Quality Standard: ${kit.standardBadge} | Form #AUDIT-${kit.slug.substring(0, 3).toUpperCase()}-2026`,
+    `Regulatory Compliance Standard: ${kit.standardBadge} | Form #AUDIT-${kit.slug.substring(0, 4).toUpperCase()}-2026`,
     margin,
-    47
+    46
   );
   doc.text(
-    `Operating Unit: ${kit.name} (${kit.industry})`,
+    `Operating Facility: ${kit.name} (${kit.industry})`,
     margin,
-    60
+    59
   );
 
-  let y = 92;
+  let y = 90;
 
   // Shift Meta Box
   doc.setFillColor(248, 250, 252);
@@ -48,166 +48,181 @@ export function generateSopAuditPdf(kit: IndustrySopKit): Uint8Array {
   doc.setFontSize(8.5);
   doc.setTextColor(15, 23, 42);
   doc.text('Date of Shift: ____________________', margin + 12, y + 16);
-  doc.text('Shift (Circle):   OPENING  /  MID-DAY  /  CLOSING', margin + 260, y + 16);
-  doc.text('Lead Supervisor on Duty: ____________________________', margin + 12, y + 32);
-  doc.text('Incident Log Number (if applicable): #____________', margin + 260, y + 32);
+  doc.text('Shift Cadence:   [  ] OPENING     [  ] MID-DAY     [  ] CLOSING', margin + 240, y + 16);
+  doc.text('Accountable Supervisor on Duty: ____________________________', margin + 12, y + 32);
+  doc.text('Facility Audit Status:   [  ] 100% PASS     [  ] ESCALATED', margin + 240, y + 32);
 
-  y += 56;
+  y += 54;
 
   // Render Checklists
-  kit.dailyChecklists.slice(0, 2).forEach((chk) => {
+  kit.dailyChecklists.slice(0, 3).forEach((chk) => {
     doc.setFillColor(30, 41, 59); // Slate 800
     doc.rect(margin, y, contentWidth, 18, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9);
-    doc.text(`${chk.name.toUpperCase()} (${chk.shiftTime})`, margin + 8, y + 13);
-    y += 24;
+    doc.setFontSize(8.5);
+    doc.text(`${chk.name.toUpperCase()} (${chk.shiftTime}) — Role: ${chk.responsibleRole}`, margin + 8, y + 12);
+    y += 22;
 
     chk.tasks.forEach((task) => {
-      // Checkbox
+      // Clean Checkbox
       doc.setDrawColor(16, 185, 129);
-      doc.setLineWidth(1);
-      doc.rect(margin + 6, y - 8, 9, 9, 'D');
+      doc.setLineWidth(1.2);
+      doc.rect(margin + 6, y - 7, 9, 9, 'D');
 
       doc.setTextColor(15, 23, 42);
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(8.5);
+      doc.setFontSize(8);
 
-      const splitText = doc.splitTextToSize(task, contentWidth - 85);
+      const splitText = doc.splitTextToSize(task, contentWidth - 30);
       doc.text(splitText, margin + 22, y);
 
-      // Initial Box on Right
-      doc.setDrawColor(203, 213, 225);
-      doc.rect(margin + contentWidth - 55, y - 9, 50, 12, 'D');
-      doc.setFontSize(7);
-      doc.setTextColor(148, 163, 184);
-      doc.text('INITIALS', margin + contentWidth - 46, y);
-
-      y += splitText.length * 11 + 4;
+      y += splitText.length * 10.5 + 4;
     });
 
-    y += 10;
+    y += 6;
   });
 
-  // Critical Escalation Banner
-  y = 710;
+  // Critical Escalation Banner (Dynamic per industry)
+  y = 705;
   doc.setFillColor(254, 242, 242);
   doc.setDrawColor(248, 113, 113);
   doc.roundedRect(margin, y, contentWidth, 44, 3, 3, 'FD');
 
   doc.setTextColor(153, 27, 27);
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(8.5);
-  doc.text('CRITICAL SAFETY & REFRIGERATION ESCALATION THRESHOLDS:', margin + 10, y + 15);
+  doc.setFontSize(8);
+  doc.text(`CRITICAL STATUTORY COMPLIANCE & ESCALATION PROTOCOL:`, margin + 10, y + 14);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(7.5);
   doc.setTextColor(185, 28, 28);
   doc.text(
-    'Any walk-in refrigeration temperature reading above 40°F (4.4°C) or hot holding unit below 140°F (60°C) must be',
+    `Any non-conformance, security event, or protocol violation under ${kit.standardBadge} must be immediately`,
     margin + 10,
-    y + 27
+    y + 26
   );
   doc.text(
-    'reported to General Management within 15 minutes. Immediate corrective action log entry is legally required.',
+    `escalated to senior leadership. Formal incident triage and corrective action logging is required within 60 minutes.`,
     margin + 10,
-    y + 37
+    y + 36
   );
 
   // Signatures Bottom Box
-  y = 765;
+  y = 760;
   doc.setDrawColor(148, 163, 184);
-  doc.line(margin + 10, y + 30, margin + 220, y + 30);
-  doc.line(margin + 280, y + 30, margin + 460, y + 30);
+  doc.line(margin + 10, y + 26, margin + 220, y + 26);
+  doc.line(margin + 280, y + 26, margin + 490, y + 26);
 
   doc.setTextColor(100, 116, 139);
   doc.setFont('helvetica', 'italic');
   doc.setFontSize(7.5);
-  doc.text('Shift Manager Verification Signature & Date', margin + 10, y + 42);
-  doc.text('General Manager Audit Review & Filing', margin + 280, y + 42);
+  doc.text('Shift Supervisor Verification Signature & Timestamp', margin + 10, y + 37);
+  doc.text('General Manager Audit Review & Formal Compliance Archive', margin + 280, y + 37);
 
   // ==========================================
-  // PAGE 2: EQUIPMENT & TEMPERATURE AUDIT LOG
+  // PAGE 2: SECTOR-SPECIFIC SOP VERIFICATION LOGBOOK
   // ==========================================
   doc.addPage();
 
   doc.setFillColor(15, 23, 42);
-  doc.rect(0, 0, pageWidth, 55, 'F');
+  doc.rect(0, 0, pageWidth, 60, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
-  doc.text('SECTION II: HACCP TEMPERATURE & EQUIPMENT LOGBOOK', margin, 32);
+  doc.text('SECTION II: OPERATIONAL SOP VERIFICATION & QUALITY AUDIT LOGBOOK', margin, 28);
 
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8);
   doc.setTextColor(148, 163, 184);
-  doc.text('Daily Cold Chain, Chemical Sanitizer Concentration & Critical Control Point (CCP) Log', margin, 46);
+  doc.text(
+    `Facility: ${kit.name} | Standard: ${kit.standardBadge}`,
+    margin,
+    44
+  );
+  doc.text(
+    'Daily verification matrix for primary standard operating procedures and mandatory compliance checkpoints.',
+    margin,
+    54
+  );
 
-  y = 75;
+  y = 76;
 
-  // Temperature Grid Table
-  const renderLogTable = () => {
-    const tableHeaders = ['Unit / Equipment Name', 'Target Standard', '09:00 AM', '02:00 PM', '09:00 PM', 'Action Taken'];
-    const colWidths = [150, 95, 65, 65, 65, 95];
+  // Dynamic Table Headers
+  const tableHeaders = ['SOP / Protocol', 'Accountable Role', 'Verification Standard', 'Compliance Mandate', 'Status'];
+  const colWidths = [140, 95, 145, 100, 51];
 
-    let startX = margin;
-    doc.setFillColor(30, 41, 59);
-    doc.rect(margin, y, contentWidth, 20, 'F');
-    doc.setTextColor(255, 255, 255);
+  let startX = margin;
+  doc.setFillColor(30, 41, 59);
+  doc.rect(margin, y, contentWidth, 20, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(7.5);
+
+  tableHeaders.forEach((h, i) => {
+    doc.text(h, startX + 4, y + 13);
+    startX += colWidths[i];
+  });
+
+  y += 20;
+
+  // Render Dynamic Rows from Comprehensive SOPs
+  kit.comprehensiveSops.slice(0, 10).forEach((sop, rIdx) => {
+    const rowHeight = 36;
+    doc.setFillColor(rIdx % 2 === 1 ? 248 : 255, rIdx % 2 === 1 ? 250 : 255, rIdx % 2 === 1 ? 252 : 255);
+    doc.rect(margin, y, contentWidth, rowHeight, 'F');
+    doc.setDrawColor(226, 232, 240);
+    doc.rect(margin, y, contentWidth, rowHeight, 'D');
+
+    // Col 1: Protocol
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(7.5);
+    doc.setTextColor(15, 23, 42);
+    const titleLines = doc.splitTextToSize(sop.title.replace(`${kit.name} — `, ''), colWidths[0] - 8);
+    doc.text(titleLines.slice(0, 2), margin + 4, y + 12);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(6.5);
+    doc.setTextColor(100, 116, 139);
+    doc.text(`[${sop.code}] ${sop.department}`, margin + 4, y + 28);
 
-    tableHeaders.forEach((h, i) => {
-      doc.text(h, startX + 4, y + 13);
-      startX += colWidths[i];
-    });
+    // Col 2: Role
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(7);
+    doc.setTextColor(51, 65, 85);
+    const roleLines = doc.splitTextToSize(sop.responsibility, colWidths[1] - 8);
+    doc.text(roleLines.slice(0, 2), margin + colWidths[0] + 4, y + 14);
 
-    y += 20;
+    // Col 3: Verification Standard
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(7);
+    doc.setTextColor(15, 23, 42);
+    const verLines = doc.splitTextToSize(sop.verificationStandard, colWidths[2] - 8);
+    doc.text(verLines.slice(0, 3), margin + colWidths[0] + colWidths[1] + 4, y + 11);
 
-    const sampleRows = [
-      ['Walk-in Cooler #1 (Proteins)', '< 38°F (3.3°C)'],
-      ['Walk-in Cooler #2 (Produce/Dairy)', '< 38°F (3.3°C)'],
-      ['Main Walk-in Freezer', '< 0°F (-18°C)'],
-      ['Line Cook Reach-in Rail #1', '34°F - 38°F'],
-      ['Line Cook Reach-in Rail #2', '34°F - 38°F'],
-      ['Steam Table Soup Well (Hot Hold)', '> 140°F (60°C)'],
-      ['Deep Fryer Left Bank', '350°F ± 5°F'],
-      ['Deep Fryer Right Bank', '350°F ± 5°F'],
-      ['3-Compartment Sink (Sink 1 Wash)', '> 110°F (43.3°C)'],
-      ['3-Compartment Sink (Sink 3 Quat)', '200 - 400 ppm'],
-      ['Commercial Dishmachine Wash Cycle', '> 160°F (Wash)'],
-      ['Commercial Dishmachine Final Rinse', '> 180°F (Sanitize)'],
-    ];
+    // Col 4: Regulatory Standard
+    doc.setFont('helvetica', 'italic');
+    doc.setFontSize(6.5);
+    doc.setTextColor(180, 83, 9);
+    const regLines = doc.splitTextToSize(sop.regulatoryStandard, colWidths[3] - 8);
+    doc.text(regLines.slice(0, 3), margin + colWidths[0] + colWidths[1] + colWidths[2] + 4, y + 11);
 
-    sampleRows.forEach((row, rIdx) => {
-      doc.setFillColor(rIdx % 2 === 1 ? 248 : 255, rIdx % 2 === 1 ? 250 : 255, rIdx % 2 === 1 ? 252 : 255);
-      doc.rect(margin, y, contentWidth, 22, 'F');
+    // Col 5: Status
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(6.5);
+    doc.setTextColor(100, 116, 139);
+    doc.text('[  ] PASS', margin + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] + 4, y + 14);
+    doc.text('[  ] AUDIT', margin + colWidths[0] + colWidths[1] + colWidths[2] + colWidths[3] + 4, y + 26);
+
+    // Vertical Dividers
+    let divX = margin + colWidths[0];
+    colWidths.slice(1).forEach((w) => {
       doc.setDrawColor(226, 232, 240);
-      doc.rect(margin, y, contentWidth, 22, 'D');
-
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(8);
-      doc.setTextColor(15, 23, 42);
-      doc.text(row[0], margin + 4, y + 14);
-
-      doc.setFont('helvetica', 'normal');
-      doc.setFontSize(7.5);
-      doc.setTextColor(100, 116, 139);
-      doc.text(row[1], margin + 154, y + 14);
-
-      // Grid dividers
-      let divX = margin + 150;
-      colWidths.slice(1).forEach((w) => {
-        doc.line(divX, y, divX, y + 22);
-        divX += w;
-      });
-
-      y += 22;
+      doc.line(divX, y, divX, y + rowHeight);
+      divX += w;
     });
-  };
 
-  renderLogTable();
+    y += rowHeight;
+  });
 
   // Closing Sign-off Page 2
   y = 760;
@@ -217,12 +232,12 @@ export function generateSopAuditPdf(kit: IndustrySopKit): Uint8Array {
   doc.setFont('helvetica', 'italic');
   doc.setFontSize(7);
   doc.text(
-    'OpsManual Pro Quality Assurance System | Page 2 of 2 | Regulated under federal FDA & OSHA Standards',
+    `OpsManual Pro Enterprise Quality Assurance | Page 2 of 2 | Regulated under: ${kit.standardBadge}`,
     margin,
     y + 20
   );
   doc.text(
-    'This daily compliance logbook must be retained on premises for a minimum of 90 calendar days for statutory audits.',
+    'This daily compliance verification logbook must be retained on file for a minimum of 90 calendar days for statutory audits.',
     margin,
     y + 32
   );
