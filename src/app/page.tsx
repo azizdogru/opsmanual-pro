@@ -110,7 +110,7 @@ export default function HomePage() {
                     {kit.industry}
                   </span>
                   <span className="text-[11px] font-semibold text-zinc-400 bg-zinc-800/80 px-2 py-0.5 rounded">
-                    {kit.docPageCount} Pages
+                    {kit.verifiedPageCount} Pages
                   </span>
                 </div>
 

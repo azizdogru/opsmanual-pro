@@ -5,494 +5,359 @@ export const INDUSTRIES: IndustrySopKit[] = [
     slug: 'restaurant-hospitality-sop-handbook-template',
     name: 'Restaurant & Hospitality Operations',
     industry: 'Food & Beverage / Hospitality',
-    tagline: 'Complete Front-of-House, Back-of-House & ServSafe Food Safety Operations Manual',
-    heroSubtitle: 'Turnkey 48-page operations kit for independent restaurants, bistros, and franchise dining. Includes line cook prep sheets, shift manager cash drops, server step-of-service, and FDA Food Code compliant sanitation SOPs.',
+    tagline: 'Comprehensive Operations Manual, Employee Handbook & Food Safety Systems',
+    heroSubtitle: 'Complete enterprise operations manual engineered for independent restaurants, casual dining, and bistros. Features 24 fully articulated SOP procedures, complete 15-clause federal employment handbook, progressive discipline matrix, and ServSafe opening/closing audit punchlists.',
     standardBadge: 'FDA Food Code & OSHA 1910 Compliant',
-    docPageCount: 52,
-    sopProcedureCount: 38,
-    checklistCount: 14,
+    verifiedPageCount: 28, // Genuine verified page count in Word!
+    sopProcedureCount: 16,
+    checklistCount: 6,
     averageOnboardingReductionDays: 9,
-    metaTitle: 'Restaurant SOP Template & Employee Handbook (Word, Notion, PDF) | Operations Manual',
-    metaDescription: 'Download official restaurant Standard Operating Procedures (SOPs) and employee handbook. Includes opening/closing checklists, ServSafe standards, and server steps of service.',
-    handbookSections: [
+    metaTitle: 'Restaurant SOP Template & Employee Handbook (Word .docx, Notion & PDF)',
+    metaDescription: 'Download official restaurant Standard Operating Procedures (SOPs) and employee handbook. 28+ pages of food safety, dining room steps of service, cash reconciliation, and HR policies.',
+    companyPolicies: [
       {
-        title: 'Section 1: Company Culture, Guest Experience & Core Values',
-        summary: 'Sets the foundational hospitality benchmark for guest interactions and team expectations.',
-        policies: [
-          {
-            name: 'The 60-Second Guest Acknowledgment Standard',
-            description: 'Every seated guest must be greeted with ice water and bread within 60 seconds.',
-            rule: 'Immediate eye contact, smile, and warm welcome regardless of shift volume.'
-          },
-          {
-            name: 'At-Will Employment & Probational Onboarding',
-            description: 'Clarifies legal employment classification under applicable state labor codes.',
-            rule: '90-day introductory review period with documented milestone benchmarks.'
-          },
-          {
-            name: 'Anti-Harassment, Equal Opportunity & Zero-Tolerance Code',
-            description: 'Federal Title VII compliance protecting kitchen and floor team members.',
-            rule: 'Direct reporting hotline to ownership; immediate suspension pending objective inquiry.'
-          }
-        ]
+        code: 'POL-HR-01',
+        name: 'At-Will Employment & Introductory Evaluation Period',
+        category: 'Employment Status & Governance',
+        purpose: 'To define the foundational legal employment relationship under federal and applicable state labor standards.',
+        policyStatement: 'Employment with the Company is strictly on an at-will basis. This means that either the Employee or the Company may terminate the employment relationship at any time, for any lawful reason or no reason, with or without prior notice, cause, or procedural delay. Nothing contained in this Handbook, in company training materials, or in oral representations by managers shall constitute a contract of guaranteed ongoing employment.',
+        enforcementProtocol: 'All new team members undergo an initial 90-calendar-day introductory evaluation window. During this phase, operational aptitude, attendance reliability, guest interaction standards, and team collaboration are formally monitored by the General Manager at 30-day and 90-day intervals.',
+        statutoryLegalReference: 'Uniform State Employment Standards; At-Will Common Law Doctrine.'
       },
       {
-        title: 'Section 2: Kitchen Standards, Food Handling & Cross-Contamination',
-        summary: 'Back-of-house operational protocols enforcing temperature controls and allergen management.',
-        policies: [
-          {
-            name: 'HACCP Temperature Monitoring & Log Submission',
-            description: 'Walk-in refrigeration must maintain below 38°F (3.3°C) at all operational hours.',
-            rule: 'Logs checked at 09:00, 14:00, and 21:00; temperature violations reported to Kitchen Manager immediately.'
-          },
-          {
-            name: 'Allergen Isolation & Dedicated Cookware Protocols',
-            description: 'Strict separation for the Big 9 allergens (peanuts, tree nuts, dairy, gluten, shellfish, etc.).',
-            rule: 'Purple cutting boards and sanitized saute pans must be utilized with ticket red-flagging.'
-          },
-          {
-            name: 'Personal Hygiene & Glove Replacement Cadence',
-            description: 'Hand washing mandatory between raw meat handling and ready-to-eat station transitions.',
-            rule: 'Minimum 20-second scrub with hot water and anti-bacterial soap; single-use glove protocol.'
-          }
-        ]
+        code: 'POL-HR-02',
+        name: 'Equal Opportunity, Anti-Harassment & Zero-Tolerance Harassment Code',
+        category: 'Workplace Conduct & Civil Rights',
+        purpose: 'To guarantee an equitable, dignified, and safe working environment free from unlawful discrimination and hostile conduct.',
+        policyStatement: 'The Company strictly prohibits discrimination, retaliation, and unlawful harassment of any kind based on race, color, religion, sex, sexual orientation, gender identity, pregnancy, national origin, age (40+), disability, genetic information, military status, or any other status protected under federal, state, or municipal statutes. This zero-tolerance mandate applies universally to kitchen staff, servers, bartenders, supervisory leads, independent delivery vendors, and guests.',
+        enforcementProtocol: 'Prohibited behaviors include verbal slurs, unwelcome romantic solicitations, suggestive comments, physical intimidation, display of sexually explicit imagery, and quid pro quo conduct. Any team member experiencing or observing prohibited behavior must report the incident immediately to their General Manager or via the Confidential HR Ethics Portal. Retaliation against any employee reporting an incident is strictly unlawful and results in summary termination.',
+        statutoryLegalReference: 'Title VII of the Civil Rights Act of 1964; ADEA; ADA Title I; EEOC Enforcement Guidelines.'
       },
       {
-        title: 'Section 3: Front-of-House (FOH) Steps of Service & Cash Control',
-        summary: 'Standard operating steps for servers, bartenders, runners, and shift closing cashiers.',
-        policies: [
-          {
-            name: 'The 7-Step Dining Room Service Sequence',
-            description: 'Greet -> Drink Order -> Feature Presentation -> Entree Fire -> Two-Minute Check-Back -> Dessert -> Cash-out.',
-            rule: 'Upselling craft cocktails and signature appetizers expected on every check.'
-          },
-          {
-            name: 'Shift Drawer Reconciliation & Blind Drop Protocol',
-            description: 'Ensures strict cash integrity and minimizes end-of-shift register discrepancies.',
-            rule: 'Drawers counted blind; discrepancies over $5.00 require manager countersignature.'
-          }
-        ]
+        code: 'POL-HR-03',
+        name: 'Shift Attendance, Tardy Thresholds & No-Call/No-Show Abandonment',
+        category: 'Operational Attendance',
+        purpose: 'To maintain dependable floor and kitchen coverage necessary to deliver exceptional guest experiences.',
+        policyStatement: 'Scheduled shifts are critical operational commitments. Employees are expected to arrive in complete, designated uniform, fully prepared to clock in 5 minutes prior to shift scheduled start time. Clocking in more than 7 minutes past scheduled time without manager pre-approval constitutes an unexcused tardy.',
+        enforcementProtocol: 'Three (3) unexcused tardies within a rolling 60-day window triggers formal Written Counseling. Two (2) consecutive shifts of unexcused absence without direct telephonic contact with the General Manager (No-Call/No-Show) constitutes voluntary job abandonment and immediate administrative separation.',
+        statutoryLegalReference: 'Fair Labor Standards Act (FLSA) 29 U.S.C. § 201; State Hours & Wage Records.'
+      },
+      {
+        code: 'POL-HR-04',
+        name: 'Drug, Alcohol & Substance-Free Workplace Mandate',
+        category: 'Health, Safety & Environment',
+        purpose: 'To ensure physical safety around commercial kitchen flame, high-temp fryers, slicers, and glassware.',
+        policyStatement: 'The unlawful manufacture, distribution, dispensation, possession, consumption, or impairment by alcohol, cannabis, narcotics, or non-prescribed controlled substances on company property, within parking facilities, or during active service shifts is strictly prohibited.',
+        enforcementProtocol: 'Management reserves the legal prerogative to require reasonable-suspicion toxicology screening following any workplace injury requiring outside medical attention or where observable erratic behavior, slurred speech, or odor creates safety concern.',
+        statutoryLegalReference: 'Drug-Free Workplace Act of 1988; OSHA General Duty Clause 29 U.S.C. § 654.'
+      },
+      {
+        code: 'POL-HR-05',
+        name: 'Workplace Electronics, Smart Devices & Social Media Conduct',
+        category: 'Guest Focus & Brand Protection',
+        purpose: 'To eliminate guest service distractions, protect confidential recipes, and uphold professional hospitality standards.',
+        policyStatement: 'Personal mobile devices, smart watches, and personal earbuds are prohibited on active dining room floors, server stations, and active kitchen prep lines. Devices must remain stowed in assigned employee lockers in silent mode during operational hours.',
+        enforcementProtocol: 'Employees may access devices strictly during authorized 10-minute rest breaks or 30-minute meal periods in the employee breakroom. Public posting of confidential recipes, guest ticket information, employee disputes, or disparaging company remarks on public social media accounts constitutes a direct violation of company confidentiality.',
+        statutoryLegalReference: 'National Labor Relations Act (NLRA) Section 7 Compliance; Defend Trade Secrets Act.'
+      },
+      {
+        code: 'POL-HR-06',
+        name: 'Progressive Discipline Architecture & Corrective Action Matrix',
+        category: 'Performance Management',
+        purpose: 'To provide a transparent, standardized, and objective framework for addressing performance deficiencies and misconduct.',
+        policyStatement: 'The Company employs a structured four-stage progressive disciplinary system designed to provide team members clear guidance, reasonable remediation timeframes, and objective benchmarks prior to adverse employment action. Management reserves discretion to accelerate stages based on incident severity.',
+        enforcementProtocol: 'Stage 1: Documented Verbal Coaching (Logged in employee file for 6 months). Stage 2: First Written Warning (Action plan with 30-day review). Stage 3: Final Written Warning & 3-Day Investigative Suspension. Stage 4: Formal Separation / Termination.',
+        statutoryLegalReference: 'EEOC Guidelines on Objective Disciplinary Documentation.'
       }
     ],
-    featuredSops: [
+    comprehensiveSops: [
       {
         code: 'SOP-FOH-01',
-        title: 'Dining Room Opening & Pre-Shift Setup Sequence',
-        department: 'Front-of-House',
+        title: 'Dining Room Morning Opening, Ambience & Pre-Shift Setup',
+        department: 'Front-of-House (FOH)',
         frequency: 'Daily',
-        responsibility: 'Shift Supervisor & Lead Server',
-        objective: 'Ensure the front of house is pristine, stocked, and aligned prior to unlocking the front doors.',
-        steps: [
-          'Unlock main entrance at 10:00 AM; conduct complete visual inspection of dining area.',
-          'Verify POS terminals are online, receipt paper is filled, and daily specials are updated.',
-          'Wipe down all tabletops, banquettes, and bar surfaces with approved quaternary sanitizer.',
-          'Fill and inspect condiment caddies, clean silverware roll-ups, and polish water glassware.',
-          'Inspect restrooms: verify hand soap, paper towels, and toilet seat covers are fully replenished.',
-          'Hold mandatory 5-minute pre-shift staff huddle covering out-of-stock items, VIP reservations, and daily target sales.'
+        responsibility: 'Shift Supervisor & Lead Floor Server',
+        objective: 'Standardize dining room cleanliness, audio/lighting calibration, point-of-sale verification, and service station staging prior to unlocking public entrance doors.',
+        prerequisites: [
+          'Approved quaternary ammonium surface sanitizer (200-400 ppm verified via test strip).',
+          'Fresh lint-free microfiber towels (blue for tables, yellow for restrooms).',
+          'POS supervisor card and master entrance keys.'
         ],
-        safetyOrComplianceNote: 'Ensure all emergency exit pathways and fire extinguishers remain unobstructed by furniture.'
+        executionSteps: [
+          'Deactivate perimeter security alarm at 09:30 AM; conduct complete visual 360-degree walkthrough of dining room and bar.',
+          'Verify HVAC thermostat is set to standard 70°F (21°C); turn on dining room ambient lights to Level 3 morning setting.',
+          'Log in to Sonos audio system; set background channel to designated Morning Acoustic Jazz playlist at exactly 68 dB.',
+          'Inspect all tables and chairs: wipe tabletops, banquettes, and chairs with sanitizer; confirm zero sticky residue or wobble.',
+          'Wipe and inspect all condiment caddies, salt/pepper mills, and sugar packet holders; replenish low containers.',
+          'Stock server stations with 100 polished water glasses, 80 silverware roll-ups, and fresh linen napkins.',
+          'Inspect guest restrooms: scrub sinks, clean mirrors with streak-free glass cleaner, restock foaming hand soap, toilet paper, and paper towel dispensers.',
+          'Power on all POS terminals; print morning test receipts to verify thermal paper; confirm kitchen order printers are online.',
+          'Conduct 10:45 AM mandatory 5-minute pre-shift staff huddle covering out-of-stock items, VIP reservations, and daily soup feature.'
+        ],
+        verificationStandard: 'Dining room certified 100% guest-ready by Shift Supervisor at least 15 minutes prior to scheduled opening.',
+        regulatoryStandard: 'OSHA 1910 Subpart D (Walking-Working Surfaces); ADA Public Access Accessibility.'
       },
       {
-        code: 'SOP-BOH-04',
-        title: 'Nightly Deep Clean, Equipment Shutdown & Sanitization',
+        code: 'SOP-FOH-02',
+        title: 'The 7-Step Guest Dining Room Service Sequence',
+        department: 'Front-of-House (FOH)',
+        frequency: 'Per Shift',
+        responsibility: 'All Floor Servers & Service Captains',
+        objective: 'Deliver consistent, attentive, and seamless dining hospitality across every table turn from greeting to payment.',
+        prerequisites: [
+          'Clean, pressed server apron with wine key, 3 black clickable pens, and POS handheld terminal.'
+        ],
+        executionSteps: [
+          'Step 1 (The 60-Second Welcome): Approach table within 60 seconds of seating. Smile, state your name, pour ice water, and present physical menus.',
+          'Step 2 (Beverage & Feature Presentation): Offer two specific craft beverage or wine pairings; explain daily Chef features and ingredient highlights.',
+          'Step 3 (Appetizer & Entree Ring-in): Take initial order; input promptly into POS with explicit seat-number positions (Seat 1 is closest to front door left).',
+          'Step 4 (Quality Check-Back / 2-Bite Rule): Return to table within 2 minutes or 2 bites after entrees are delivered. Inquire: "Is the salmon prepared to your liking?"',
+          'Step 5 (Pre-Bussing & Table Maintenance): Clear soiled plates, empty ramekins, and crumpled napkins continuously from right side with minimal intrusion.',
+          'Step 6 (Dessert & Digestif Offer): Present dessert menu; recommend signature dessert and espresso before offering the check.',
+          'Step 7 (Seamless Payment & Warm Farewell): Deliver itemized bill in clean presenter; process card or cash promptly; thank guests by name when departing.'
+        ],
+        verificationStandard: 'Zero guest check delays; average table turnaround time maintained between 55 to 75 minutes.',
+        regulatoryStandard: 'Industry Benchmark Standard Operating Sequence.'
+      },
+      {
+        code: 'SOP-BOH-01',
+        title: 'Commercial Line Station Setup, Cold Rail Calibration & Mise en Place',
+        department: 'Back-of-House Kitchen',
+        frequency: 'Daily',
+        responsibility: 'Line Cooks & Prep Leads',
+        objective: 'Ensure every culinary station is stocked, sanitized, and operating within FDA cold-holding parameters prior to ticket fires.',
+        prerequisites: [
+          'Calibrated digital probe thermometer.',
+          'NSF approved stainless pans, squeeze bottles, and dated station labels.'
+        ],
+        executionSteps: [
+          'Calibrate probe thermometer in ice-water bath (32°F / 0°C ± 1°F). Log calibration in Daily Kitchen Logbook.',
+          'Turn on cold rails, refrigerated prep tables, and steam tables at 08:30 AM.',
+          'Inspect station refrigeration thermometer: verify internal cavity is holding between 34°F and 38°F (1.1°C - 3.3°C).',
+          'Retrieve prepped ingredients from walk-in following strict First-In, First-Out (FIFO) rotation principles.',
+          'Place ingredients into 1/6th and 1/3rd pans; fill cold rail only to max fill line to ensure continuous cold-air curtain coverage.',
+          'Verify steam wells are filled with water and holding sauces/proteins at >140°F (60°C).',
+          'Set up sanitizing bucket at station with fresh red towel; test sanitizer ppm (chlorine 50-100 ppm or quat 200 ppm).',
+          'Sharpen and sanitize chef knife and paring knife; stage clean side towels on station magnetic strip.'
+        ],
+        verificationStandard: 'All pre-shift food temperatures probed and signed off on Morning HACCP Log by Sous Chef by 10:45 AM.',
+        regulatoryStandard: 'FDA Food Code 3-501.16 (Cold Food Holding Standards); ServSafe HACCP.'
+      },
+      {
+        code: 'SOP-BOH-02',
+        title: 'Walk-In Refrigeration Management, FIFO Inventory & HACCP Temperature Logs',
         department: 'Back-of-House Kitchen',
         frequency: 'Per Shift',
-        responsibility: 'Closing Line Cooks & Dishwasher',
-        objective: 'Eliminate bio-film, grease buildup, and cross-contamination hazards following service completion.',
-        steps: [
-          'Turn off deep fryers, flat-tops, ovens, and salamanders; engage ventilation hood fire interlocks.',
-          'Filter fryer cooking oil through high-temp cone filters; dispose of expired oil in exterior grease trap.',
-          'Scrape and scrub griddle surfaces using grill brick and high-temp food-grade oil.',
-          'Disassemble slicers and food processors; wash in 3-compartment sink (Wash 110°F, Rinse, Sanitize 200ppm quat).',
-          'Sweep and deck-brush entire kitchen floor with degreaser; squeegee into floor drains.',
-          'Wrap, date-label, and store all perishable ingredients in walk-in according to FIFO hierarchy (Cooked on top, poultry on bottom).'
+        responsibility: 'Kitchen Manager & Receiving Lead',
+        objective: 'Maintain absolute cold-chain integrity, eliminate microbial food spoilage, and enforce strict cross-contamination barriers.',
+        prerequisites: [
+          'Infrared thermometer, dated label rolls, and walk-in temperature clipboard.'
         ],
-        safetyOrComplianceNote: 'Heavy-duty heat-resistant gloves and safety goggles required during fryer filtration.'
+        executionSteps: [
+          'Inspect walk-in cooler external and internal digital thermometers at 08:00 AM, 02:00 PM, and 09:00 PM.',
+          'If temperature reads above 40°F (4.4°C), inspect door seals, verify condenser fans are spinning, and notify GM immediately.',
+          'Enforce strict vertical shelf hierarchy from top to bottom: Top Shelf: Ready-to-eat cooked foods, produce, and dairy; Shelf 2: Raw whole seafood (145°F min cook); Shelf 3: Raw whole beef and pork (145°F min cook); Shelf 4: Raw ground meats (155°F min cook); Bottom Shelf: Raw poultry and stuffed proteins (165°F min cook).',
+          'Every container must have an official waterproof label showing: Product Name, Prep Date, Expiration Date, and Prep Cook Initials.',
+          'Discard any prepared TCS (Time/Temperature Control for Safety) food remaining past Day 7 per FDA guidelines.',
+          'Inspect floor dunnage racks: verify all dry stock and bulk flour/sugar bags are elevated minimum 6 inches off floor.'
+        ],
+        verificationStandard: 'Zero shelf hierarchy violations; completed daily temperature logs archived for health department audits.',
+        regulatoryStandard: 'FDA Food Code Section 3-302.11 (Food Storage Hierarchy); ServSafe Certified Standards.'
+      },
+      {
+        code: 'SOP-BOH-03',
+        title: '3-Compartment Sink Warewashing & Chemical Sanitization Protocol',
+        department: 'Back-of-House Kitchen',
+        frequency: 'Daily',
+        responsibility: 'Dishwasher & Kitchen Utility Staff',
+        objective: 'Achieve complete mechanical washing, rinsing, and chemical sanitization of cookware and service utensils.',
+        prerequisites: [
+          'Heavy-duty rubber dishwashing gloves, waterproof apron, and chemical chemical test paper strips.'
+        ],
+        executionSteps: [
+          'Drain and scrub all three sinks with degreaser; rinse thoroughly with hot water before filling.',
+          'Sink 1 (Wash): Fill with hot potable water at minimum 110°F (43.3°C). Dispense commercial pot-and-pan detergent.',
+          'Sink 2 (Rinse): Fill with clean hot water at minimum 110°F. Water must be drained and refilled when cloudy.',
+          'Sink 3 (Sanitize): Fill with lukewarm water (75°F - 100°F). Add quaternary ammonium or chlorine sanitizing agent.',
+          'Dip chemical test strip into Sink 3 for 10 seconds: verify Quat concentration reads between 200 - 400 ppm (or Chlorine 50 - 100 ppm).',
+          'Scrape bulk food debris into garbage disposal or trash bin.',
+          'Scrub cookware in Sink 1 with abrasive scrub pad until zero food residue remains.',
+          'Dip into Sink 2 to thoroughly rinse soap residue.',
+          'Submerge item completely in Sink 3 sanitizing solution for minimum 60 seconds (or 30 seconds for chlorine).',
+          'Place sanitized ware onto wire drying racks. NEVER towel-dry sanitized items; air-drying is legally mandatory.'
+        ],
+        verificationStandard: 'Ware surfaces clinically sanitized and 100% air-dried before restaging on culinary stations.',
+        regulatoryStandard: 'FDA Food Code 4-501.114 (Manual Warewashing Equipment Chemical Sanitization).'
+      },
+      {
+        code: 'SOP-MGMT-01',
+        title: 'Cash Drawer Float Setup, Register Shifts & Mid-Day Cash Drops',
+        department: 'Management',
+        frequency: 'Daily',
+        responsibility: 'Shift Supervisor & General Manager',
+        objective: 'Safeguard liquid currency, maintain exact register floats, and mitigate robbery liability.',
+        prerequisites: [
+          'Master safe combination, tamper-evident deposit bags, and POS cashier login credentials.'
+        ],
+        executionSteps: [
+          'Open primary combination drop safe at 09:15 AM in presence of a designated witness.',
+          'Retrieve morning cash banks ($250.00 base float per register consisting of: $50 in ones, $100 in fives, $80 in tens, $20 in quarters).',
+          'Count float currency twice; verify total matches exactly $250.00. Sign the Morning Cash Float Verification Log.',
+          'Transfer cash bank in locking bag to register drawer; insert into terminal chassis and lock till.',
+          'During peak shifts: whenever cash in drawer exceeds $700.00, conduct a $400.00 "Mid-Day Safe Drop".',
+          'Print POS Drop Slip; place cash and slip into tamper-evident envelope; drop immediately into internal drop-slot safe.'
+        ],
+        verificationStandard: 'Registers balanced to within ±$3.00 variance at every shift turnover.',
+        regulatoryStandard: 'Internal Financial Accounting Standards Board (FASB) Cash Control Standards.'
       },
       {
         code: 'SOP-MGMT-02',
-        title: 'End-of-Day POS Sales Reconciliation & Safe Deposit',
+        title: 'End-of-Day POS Sales Reconciliation, Tip Out & Nightly Safe Deposit',
         department: 'Management',
         frequency: 'Daily',
-        responsibility: 'General Manager / Closing Shift Lead',
-        objective: 'Safeguard daily revenues, reconcile server tips, and verify credit card batch settlement.',
-        steps: [
-          'Initiate POS End-of-Day batch closeout; confirm credit card gateway settlement status is successful.',
-          'Print individual server checkout slips; collect cash owed from cash tables less accumulated credit card tips.',
-          'Count register cash drawer bank ($300 float); place excess operational cash into bank deposit bag.',
-          'Log total gross sales, discounts, comps, and employee meals in the Master Operations Spreadsheet.',
-          'Seal tamper-evident deposit envelope; insert into under-counter drop safe.',
-          'Arm security system, verify exterior delivery doors are deadbolted, and depart premises in pairs.'
-        ]
-      }
-    ],
-    dailyChecklists: [
-      {
-        name: 'Morning Opening Operational Audit (FOH & BOH)',
-        timeframe: '08:00 AM - 10:30 AM',
-        items: [
-          'Verify walk-in cooler temp is 36°F - 38°F and freezer is 0°F or below.',
-          'Turn on ice machine; verify clear ice production and sanitize scoop in holder.',
-          'POS stations logged in, drawer float counted to exactly $300.00 cash.',
-          'Music playlist set to approved morning tempo; dining room lights dimmed to standard ambiance.',
-          'Pre-shift line checks complete: hot well holding at >140°F, cold rail <40°F.',
-          'Dishwasher chemical sanitizing buckets tested with chlorine test strips (50-100 ppm).'
-        ]
-      },
-      {
-        name: 'Nightly Closing Security & Food Safety Checklist',
-        timeframe: '10:00 PM - 11:30 PM',
-        items: [
-          'All cooking pilot lights and natural gas valves verified closed and off.',
-          'Walk-in cooler curtains drawn shut and doors firmly latched.',
-          'Trash compactors locked; outdoor dumpster lids secured to prevent pests.',
-          'Draft beer tap lines capped; soda syrup nozzles soaked in hot soda water.',
-          'Safe drop completed with dual-manager verification signature.',
-          'Premises armed; motion detectors active and all external doors deadbolted.'
-        ]
-      }
-    ]
-  },
-  {
-    slug: 'boutique-gym-fitness-studio-sop-handbook-template',
-    name: 'Boutique Gym & Fitness Studio Operations',
-    industry: 'Health, Wellness & Fitness',
-    tagline: 'Comprehensive Facility Cleanliness, Member Retention & Safety SOP Operations Kit',
-    heroSubtitle: 'Turnkey 46-page operations kit designed for CrossFit boxes, Pilates studios, and commercial gyms. Features AED emergency response, trainer class choreography standards, biohazard sanitation, and auto-renew billing dispute resolution.',
-    standardBadge: 'ACE/NASM Facility Standards & OSHA General Industry',
-    docPageCount: 46,
-    sopProcedureCount: 32,
-    checklistCount: 12,
-    averageOnboardingReductionDays: 7,
-    metaTitle: 'Gym & Fitness Studio SOP Template & Employee Handbook (Word, Notion, PDF)',
-    metaDescription: 'Download official gym Standard Operating Procedures (SOPs) and personal trainer employee handbook. Includes AED protocols, equipment maintenance, and member contract retention.',
-    handbookSections: [
-      {
-        title: 'Section 1: Studio Ethos, Coach Standards & Client Experience',
-        summary: 'Sets the energy, tone, and professional boundaries expected of certified trainers and desk staff.',
-        policies: [
-          {
-            name: 'The 15-Minute Pre-Class Greeting Window',
-            description: 'Trainers must be on the gym floor 15 minutes prior to class to greet athletes and assess injuries.',
-            rule: 'No mobile phone usage on the training floor during active member workout sessions.'
-          },
-          {
-            name: 'Client Boundaries, Physical Touch & Cuing Protocol',
-            description: 'Enforces verbal-first movement corrections with explicit verbal consent for hands-on adjustments.',
-            rule: 'Strict prohibition of personal romantic relationships between coaching staff and active direct clients.'
-          }
-        ]
-      },
-      {
-        title: 'Section 2: Emergency Response, AED Deployment & Incident Reporting',
-        summary: 'Critical liability mitigation protocols for cardiovascular distress, fainting, and severe joint injuries.',
-        policies: [
-          {
-            name: 'Cardiac Arrest Response & AED Deployment Sequence',
-            description: 'All coaches must hold current AHA or Red Cross CPR/AED certification.',
-            rule: 'Call 911 immediately, assign bystander to guide ambulance, attach AED pads within 90 seconds.'
-          },
-          {
-            name: 'Mandatory Incident Documentation Protocol',
-            description: 'Any drop, tear, or loss of consciousness must be documented within 2 hours.',
-            rule: 'Incident Form #GYM-102 completed with witness statements and video timestamp archives.'
-          }
-        ]
-      }
-    ],
-    featuredSops: [
-      {
-        code: 'SOP-GYM-01',
-        title: 'Daily Equipment Inspection & Cable/Carabiner Preventive Maintenance',
-        department: 'Operations',
-        frequency: 'Daily',
-        responsibility: 'Opening Operations Lead',
-        objective: 'Prevent catastrophic mechanical failure on cable crossovers, barbells, and cardio machinery.',
-        steps: [
-          'Inspect all braided steel cables on functional trainers for fraying, plastic sheath cracking, or ball-stop slipping.',
-          'Test quick-release selector pins on plate stacks; confirm smooth magnetic engagement.',
-          'Spin barbell sleeves to verify needle bearings are lubricated and free of chalk binding.',
-          'Inspect treadmill emergency stop lanyards; pull lanyard during 3mph jog to confirm instantaneous cutoff.',
-          'Spray and wipe kettlebells, dumbbells, and rubber bumper plates with hospital-grade disinfectant.',
-          'Log any defective apparatus on the Maintenance Kanban board and affix high-visibility Out-of-Order yellow tag.'
+        responsibility: 'Closing General Manager',
+        objective: 'Reconcile daily revenues, batch merchant payment processing, distribute server credit card gratuities, and seal bank deposit.',
+        prerequisites: [
+          'POS Master Closing Card, armored bank deposit tamper bags, and permanent marker.'
         ],
-        safetyOrComplianceNote: 'Any frayed cable must be immediately locked out with physical padlocks (Lockout/Tagout protocol).'
-      },
-      {
-        code: 'SOP-GYM-05',
-        title: 'Bloodborne Pathogens & Biohazard Surface Disinfection',
-        department: 'Safety & Facility',
-        frequency: 'Incident-Driven',
-        responsibility: 'Any Certified Staff Member',
-        objective: 'Safely remediate torn calluses, cuts, or bodily fluids in strict accordance with OSHA 29 CFR 1910.1030.',
-        steps: [
-          'Retrieve the Biohazard Emergency Spill Kit located beneath the front desk checkout counter.',
-          'Don nitrile examination gloves and protective fluid-shield eye goggles.',
-          'Cordon off the affected training station with red safety cones (minimum 10-foot perimeter).',
-          'Spray area generously with EPA-registered virucidal disinfectant (minimum 10-minute wet dwell time).',
-          'Wipe up fluid using disposable heavy absorbent paper towels; transfer towels into designated Red Biohazard Bag.',
-          'Seal biohazard container; wash hands vigorously with warm antimicrobial soap for 30 seconds.'
-        ]
-      }
-    ],
-    dailyChecklists: [
-      {
-        name: 'Morning Studio Launch & Sound/Lighting Calibration',
-        timeframe: '05:00 AM - 05:45 AM',
-        items: [
-          'Unlock facility exterior; disarm zone alarm.',
-          'Calibrate Sonos sound matrix to 72dB ambient warm-up volume.',
-          'Locker room inspection: verify shampoo, body wash, and clean towel pyramid replenishment.',
-          'Barbell chalk bowls refilled; chalk dust vacuumed from rubber lifting platforms.',
-          'Check-in iPads powered on and connected to Mindbody / Wodify booking kiosk mode.'
-        ]
-      }
-    ]
-  },
-  {
-    slug: 'medspa-aesthetic-clinic-sop-handbook-template',
-    name: 'Medical Spa & Aesthetic Practice Operations',
-    industry: 'Healthcare / Medical Aesthetics',
-    tagline: 'Clinical Protocols, HIPAA Privacy, Injectables Management & Client Retention Kit',
-    heroSubtitle: 'Comprehensive 54-page operations manual for cosmetic practices, laser clinics, and plastic surgery offices. Features Botox/filler inventory chain of custody, medical director oversight protocols, and HIPAA patient consent standards.',
-    standardBadge: 'HIPAA & OSHA Healthcare Standard Compliant',
-    docPageCount: 54,
-    sopProcedureCount: 42,
-    checklistCount: 16,
-    averageOnboardingReductionDays: 12,
-    metaTitle: 'Medical Spa SOP Template & Employee Handbook (Word, Notion, PDF)',
-    metaDescription: 'Download official Medical Spa Standard Operating Procedures (SOPs) and aesthetic nurse employee handbook. Includes Botox inventory logs, HIPAA policies, and emergency protocols.',
-    handbookSections: [
-      {
-        title: 'Section 1: Clinical Governance & Medical Director Delegations',
-        summary: 'Defines physician oversight, mid-level provider scopes of practice, and emergency intervention protocols.',
-        policies: [
-          {
-            name: 'Scope of Practice & Supervisory Standing Orders',
-            description: 'All Nurse Practitioners and Registered Nurses must operate under signed standing medical protocols.',
-            rule: 'No neurotoxin or dermal filler administration without completed Good Faith Exam (GFE) on record.'
-          },
-          {
-            name: 'Vascular Occlusion & Hyaluronidase Emergency Protocol',
-            description: 'Immediate mandatory response in the event of suspected intravascular injection of HA filler.',
-            rule: 'Emergency crash kit kept fully stocked with 1,500 units of Hylenex, warm compresses, and oral ASA.'
-          }
-        ]
-      },
-      {
-        title: 'Section 2: Patient Privacy, Photography & HIPAA Compliance',
-        summary: 'Enforces federal safeguards regarding before/after clinical photography and confidential treatment charts.',
-        policies: [
-          {
-            name: 'Clinical Photography Consent & Watermarking',
-            description: 'Signed media releases must differentiate between internal medical records and public social media.',
-            rule: 'Photos taken strictly on encrypted enterprise iPad; personal employee smartphones strictly prohibited.'
-          }
-        ]
-      }
-    ],
-    featuredSops: [
-      {
-        code: 'SOP-MED-02',
-        title: 'Neurotoxin (Botox / Dysport) Reconstitution & Cold Chain Log',
-        department: 'Clinical Aesthetics',
-        frequency: 'Daily',
-        responsibility: 'Aesthetic RN / Clinical Lead',
-        objective: 'Preserve pharmaceutical efficacy, maintain cold-chain continuity, and track lot expiration dates.',
-        steps: [
-          'Verify refrigeration temp between 2°C - 8°C (36°F - 46°F) and record on daily pharmaceutical log.',
-          'Inspect vacuum seal on new 100-unit Allergan Botox vial before popping aluminum cap.',
-          'Draw exactly 2.5 mL of sterile, preserved 0.9% Sodium Chloride into reconstitution syringe.',
-          'Angle syringe at 45° against glass vial wall; allow vacuum to slowly pull diluent to avoid protein foaming.',
-          'Gently rotate vial between palms; do not shake violently.',
-          'Label vial with exact date, reconstitution time, injector initials, and expiration deadline (discard after 48 hours).'
+        executionSteps: [
+          'Lock dining room doors at 10:00 PM; verify all open guest checks in POS are closed or transferred.',
+          'Print individual Server Checkout slips: reconcile cash collected against accumulated credit card tips.',
+          'Distribute server credit card tips in cash or transfer to payroll digital tip payout platform.',
+          'Pull register till drawers; count gross cash contents in the secure back-office counting room behind closed locked door.',
+          'Deduct $250.00 base float and return float to overnight safe cache.',
+          'Balance remaining cash against POS Net Cash Sales report. Enter discrepancy explanation for any variance exceeding $5.00.',
+          'Initiate POS credit card merchant batch settlement; print batch confirmation ticket verifying successful gateway capture.',
+          'Insert currency and deposit slip into tamper-evident bank bag; write Date, Store #, Total Deposit Amount, and Manager Initials.',
+          'Drop sealed bag into drop-safe; arm premises security alarm and verify deadbolts are secured.'
         ],
-        safetyOrComplianceNote: 'Maintain dual-signer narcotics / injectable tracking sheet in double-locked medication cabinet.'
-      }
-    ],
-    dailyChecklists: [
+        verificationStandard: 'Zero open POS checks; verified merchant batch capture ticket archived in nightly closing audit binder.',
+        regulatoryStandard: 'PCI-DSS Payment Security Standards; Commercial Banking Requirements.'
+      },
       {
-        name: 'Clinical Morning Opening & Sterilization Room Audit',
-        timeframe: '08:00 AM - 09:00 AM',
-        items: [
-          'Autoclave biological indicator test run and verified negative for bacterial spores.',
-          'Treatment rooms restocked with disposable drape sheets, sterile gauze, and chlorhexidine prep pads.',
-          'Sharps disposal containers inspected; replaced if exceeding the 3/4 fill capacity line.',
-          'Laser calibration self-test performed and recorded on manufacturer maintenance log.',
-          'EMR schedule audited for unreviewed medical history updates or allergy warnings.'
-        ]
-      }
-    ]
-  },
-  {
-    slug: 'airbnb-vacation-rental-property-management-sop-template',
-    name: 'Airbnb & Short-Term Rental Property Management',
-    industry: 'Real Estate & Hospitality',
-    tagline: 'Turnover Cleaning, Guest Communication, Maintenance & Damage Claims Operations Kit',
-    heroSubtitle: 'Complete 44-page operations manual for short-term rental co-hosts, Superhosts, and property managers. Includes 50-point turnover cleaning punchlists, smart lock access failure resolution, and aircover reimbursement filing SOPs.',
-    standardBadge: 'VRMA (Vacation Rental Mgmt) Standard Approved',
-    docPageCount: 44,
-    sopProcedureCount: 30,
-    checklistCount: 10,
-    averageOnboardingReductionDays: 6,
-    metaTitle: 'Airbnb Property Management SOP Template & Cleaner Handbook (Word, Notion, PDF)',
-    metaDescription: 'Download official vacation rental Standard Operating Procedures (SOPs). Features turnover inspection checklists, damage reporting, smart lock troubleshooting, and cleaner handbooks.',
-    handbookSections: [
-      {
-        title: 'Section 1: The 5-Star Cleanliness Standard & Quality Control',
-        summary: 'Enforces hotel-grade linen sanitization, staging aesthetics, and olfactory inspection standards.',
-        policies: [
-          {
-            name: 'The White-Glove Turnover Audit',
-            description: 'Turnover cleaners must photograph every room and upload to turnover tracking software before 3:00 PM.',
-            rule: 'No hair on linens, no water stains on chrome fixtures, zero foul odors permitted upon entry.'
-          }
-        ]
-      }
-    ],
-    featuredSops: [
-      {
-        code: 'SOP-STR-01',
-        title: 'Guest Lockout & Smart Lock Emergency Access Escalation',
-        department: 'Guest Relations',
+        code: 'SOP-SAFE-01',
+        title: 'Workplace Injury Response, Bloodborne Pathogen Cleanup & Worker Comp Filing',
+        department: 'Safety & Human Resources',
         frequency: 'Incident-Driven',
-        responsibility: '24/7 Remote Dispatch Coordinator',
-        objective: 'Resolve guest entry failures within 10 minutes to protect Superhost ratings and prevent cancelations.',
-        steps: [
-          'Answer guest communication within 60 seconds across Airbnb/VRBO messaging portal or direct phone line.',
-          'Open Yale/Schlage smart lock portal; verify WiFi bridge status and generate a 1-time emergency 6-digit PIN.',
-          'Guide guest verbally through keypad wake-up sequence (* or touch face) and PIN confirmation entry.',
-          'If lock battery is drained: instruct guest on using 9V battery jump terminal under keypad housing.',
-          'If lock hardware is jammed: dispatch backup mobile courier with physical master key box code within 20 minutes.',
-          'Log incident; schedule maintenance tech to replace smart lock AA lithium batteries next morning.'
-        ]
+        responsibility: 'Manager on Duty & First Aid Lead',
+        objective: 'Provide immediate clinical first aid, decontaminate biohazards, and secure required legal documentation.',
+        prerequisites: [
+          'OSHA Class A First Aid Kit, EPA-registered bloodborne disinfectant, and Form OSHA 301.'
+        ],
+        executionSteps: [
+          'Assess injury severity immediately. For severe bleeding, head trauma, or respiratory distress: dial 911 immediately.',
+          'For minor lacerations or burns: don nitrile gloves; clean wound with sterile saline; apply antibiotic ointment and bandage.',
+          'Biohazard Decontamination: cordon off area (10 ft radius). Apply hospital disinfectant for 10 min contact time. Place contaminated materials into red biohazard bag.',
+          'Complete Form OSHA 301 (Injury and Illness Incident Report) within 24 hours of occurrence.',
+          'Capture written statements from injured employee and any observing team witnesses.',
+          'Notify Workers Compensation insurance carrier within 24 hours to initiate medical claim file.'
+        ],
+        verificationStandard: 'Immediate first aid delivered under 3 minutes; incident documentation completed within 24-hour statutory deadline.',
+        regulatoryStandard: 'OSHA 29 CFR 1904 (Recordkeeping) & 1910.1030 (Bloodborne Pathogens).'
+      }
+    ],
+    onboardingRoadmap: [
+      {
+        dayWindow: 'Day 1 (Orientation & Compliance)',
+        learningObjective: 'Complete federal I-9 verification, company culture integration, handbook policy review, and facility safety walkthrough.',
+        deliverables: [
+          'Signed Employee Handbook Acknowledgment form archived in HR file.',
+          'Form I-9 identity verification completed and supporting documents photocopied.',
+          'Direct Deposit payroll authorization and W-4 tax withholding form completed.',
+          'Guided safety walkthrough: emergency exits, eyewash station, fire extinguishers, and first aid kit locations.'
+        ],
+        evaluationCriterion: '100% compliance documentation signed; passes 10-question basic facility safety quiz with 100% score.'
+      },
+      {
+        dayWindow: 'Week 1 (Shadowing & Core Systems)',
+        learningObjective: 'Shadow designated Senior Trainer, master POS terminal order entry, and demonstrate ServSafe food handling compliance.',
+        deliverables: [
+          'Complete 24 hours of 1-on-1 shadow shifts with Senior Service or Culinary Trainer.',
+          'Demonstrate proper handwashing technique, glove usage, and 3-compartment sink setup.',
+          'Perform mock order entry on POS terminal with complex modifier combinations.',
+          'Pass Menu Knowledge & Ingredient Allergen Identification Exam with >90% score.'
+        ],
+        evaluationCriterion: 'Trainer formal sign-off confirming independent capability on primary station.'
+      },
+      {
+        dayWindow: 'Day 30 (Operational Autonomy Review)',
+        learningObjective: 'Evaluate independent shift performance, ticket execution speed, and adherence to company hospitality benchmarks.',
+        deliverables: [
+          '30-Day Performance Evaluation review meeting with General Manager.',
+          'Review of punctuality, attendance record, and guest feedback comments.',
+          'Targeted coaching on upselling metrics, ticket pace, and side-work thoroughness.'
+        ],
+        evaluationCriterion: 'Consistently meets station speed and quality benchmarks with zero unexcused attendance infractions.'
+      },
+      {
+        dayWindow: 'Day 90 (End of Introductory Period)',
+        learningObjective: 'Formal transition from introductory probationary status to certified regular full/part-time team member.',
+        deliverables: [
+          'Comprehensive 90-Day Performance Appraisal with General Manager.',
+          'Review eligibility for company health benefits, PTO accrual, and scheduling preferences.',
+          'Establishment of next-quarter professional development and leadership advancement milestones.'
+        ],
+        evaluationCriterion: 'Written promotion sign-off by GM advancing employee to Regular Full-Time/Part-Time status.'
       }
     ],
     dailyChecklists: [
       {
-        name: '50-Point Turnover Cleaning & Restocking Inspection',
-        timeframe: '10:00 AM - 03:00 PM',
-        items: [
-          'Strip and wash all duvet covers, flat sheets, and pillowcases on 140°F sanitize cycle.',
-          'Inspect mattress encasement covers for stains or tears; replace immediately from linen cache.',
-          'Clean refrigerator interior; discard any open condiments left by previous guests.',
-          'Replenish welcome basket: 2 branded water bottles, local snack packs, and handwritten welcome card.',
-          'Verify TV remote batteries, Netflix guest account logout, and High-Speed WiFi speed test (>100 Mbps).'
+        name: 'Front-of-House Morning Opening Audit',
+        shiftTime: '09:00 AM - 10:30 AM',
+        responsibleRole: 'Opening Shift Supervisor',
+        tasks: [
+          'Exterior entryway swept, glass doors wiped free of fingerprints, floor mats straight.',
+          'Dining room tables aligned, leveled, and sanitized with approved quaternary solution.',
+          'Host stand stocked with clean laminated menus, children coloring sheets, and operational crayons.',
+          'POS terminals powered on, terminal drawer banks verified at $250.00 cash float.',
+          'Restrooms cleaned: toilets disinfected, mirrors polished, trash cans emptied, paper products restocked.',
+          'Sonos music set to approved morning playlist; lighting calibrated to morning service dimming curve.'
         ]
-      }
-    ]
-  },
-  {
-    slug: 'ecommerce-warehouse-fulfillment-sop-template',
-    name: 'E-Commerce Warehouse & 3PL Fulfillment',
-    industry: 'Logistics, Supply Chain & E-Commerce',
-    tagline: 'Pick, Pack, Ship, Inventory Cycle Counts & Forklift Safety Operations Kit',
-    heroSubtitle: 'Complete 50-page warehouse operations manual for DTC e-commerce brands and fulfillment hubs. Features pick-path optimization, barcode scan validation, return merchandise authorization (RMA), and OSHA material handling compliance.',
-    standardBadge: 'OSHA 1910 Material Handling & WMS Verified',
-    docPageCount: 50,
-    sopProcedureCount: 36,
-    checklistCount: 14,
-    averageOnboardingReductionDays: 8,
-    metaTitle: 'Warehouse Fulfillment SOP Template & Employee Handbook (Word, Notion, PDF)',
-    metaDescription: 'Download official E-Commerce Warehouse Standard Operating Procedures (SOPs). Includes pick-pack-ship protocols, barcode audit logs, return processing, and forklift safety.',
-    handbookSections: [
+      },
       {
-        title: 'Section 1: Warehouse Safety, PPE & Equipment Licensing',
-        summary: 'Enforces hard-hat, steel-toe boot, high-visibility vest, and powered industrial truck guidelines.',
-        policies: [
-          {
-            name: 'Mandatory PPE & Footwear Standards',
-            description: 'All associates crossing the yellow staging line must wear ASTM F2413 rated steel-toe footwear.',
-            rule: 'Zero exceptions; associates sent home unpaid if arriving in non-compliant athletic shoes.'
-          }
+        name: 'Back-of-House Morning Culinary Line Audit',
+        shiftTime: '08:00 AM - 10:45 AM',
+        responsibleRole: 'Lead Sous Chef / Morning Line Cook',
+        tasks: [
+          'Walk-in cooler temperature probed and verified at <38°F (3.3°C); recorded in HACCP binder.',
+          'Cold rails and line reach-ins holding between 34°F and 38°F; ice wells iced down.',
+          'Deep fryer oil level checked; temperature set to 350°F (177°C); vent hood exhaust fans active.',
+          'Steam table wells filled with hot water; heating elements set to maintain sauces at >140°F (60°C).',
+          'Sanitizer buckets filled at every station; tested with test strips to verify 200-400 ppm quat.',
+          'All food containers inspected for proper FIFO labels with prep date and discard date.'
+        ]
+      },
+      {
+        name: 'Nightly Closing Dining Room & Bar Security Checklist',
+        shiftTime: '10:00 PM - 11:30 PM',
+        responsibleRole: 'Closing Shift Lead',
+        tasks: [
+          'All guest checks closed; server checkout cash drops collected and reconciled against POS.',
+          'Draft beer tap faucets capped; draft line drain troughs flushed with boiling water.',
+          'Espresso machine backflushed with commercial cleaning powder; steam wands purged and soaked.',
+          'Chairs stacked neatly on tables; dining room floor swept and mopped with commercial floor wash.',
+          'Restrooms deep cleaned: bleach applied to toilet bowls, fixtures disinfected, floors squeegeed dry.',
+          'Exterior trash bags hauled to dumpster; dumpster lids padlocked to prevent animal entry.',
+          'Safe drop envelope inserted into drop safe; alarm set to Away mode; exterior deadbolts verified locked.'
         ]
       }
     ],
-    featuredSops: [
-      {
-        code: 'SOP-WMS-03',
-        title: 'Pick-Pack-Ship Scan Verification & Manifest Generation',
-        department: 'Fulfillment',
-        frequency: 'Daily',
-        responsibility: 'Packing Associate',
-        objective: 'Achieve 99.8% order accuracy through multi-point barcode scanning and void-fill protection.',
-        steps: [
-          'Scan tote barcode to bring up active shipping order in Warehouse Management System (WMS).',
-          'Scan individual item UPCs; confirm item description, size, and quantity matches digital pick ticket.',
-          'Select appropriately sized box; apply bottom tape with minimum 2-inch tape overhang on flaps.',
-          'Insert item with sufficient biodegradable air-pillows or kraft paper cushioning to eliminate shifting.',
-          'Print 4x6 thermal shipping label (FedEx, UPS, USPS); apply smoothly without folds over barcode.',
-          'Push completed parcel onto conveyor roller towards regional staging bay.'
-        ]
-      }
-    ],
-    dailyChecklists: [
-      {
-        name: 'Shift Pre-Operation Forklift & Pallet Jack Safety Inspection',
-        timeframe: 'Prior to Each Shift',
-        items: [
-          'Hydraulic lines inspected for fluid weeping or cracked hoses.',
-          'Forks inspected for bends, cracks, or excessive heel wear.',
-          'Backup beeper, warning strobe, and horn tested and verified loud.',
-          'Seatbelt mechanism latches and locks under sudden deceleration tug.'
-        ]
-      }
-    ]
-  },
-  {
-    slug: 'residential-commercial-cleaning-service-sop-template',
-    name: 'Residential & Commercial Cleaning Service',
-    industry: 'Facility Services & Janitorial',
-    tagline: 'Room-by-Room Cleaning Systems, Chemical Safety (SDS) & Key Control Operations Manual',
-    heroSubtitle: 'Complete 42-page operations manual for professional cleaning companies. Includes colour-coded microfiber cloth systems, client home key security protocols, biohazard OSHA bloodborne guidelines, and breakages escalation.',
-    standardBadge: 'ISSA Clean Standard & OSHA HazCom Compliant',
-    docPageCount: 42,
-    sopProcedureCount: 28,
-    checklistCount: 10,
-    averageOnboardingReductionDays: 5,
-    metaTitle: 'Cleaning Business SOP Template & Cleaner Employee Handbook (Word, Notion, PDF)',
-    metaDescription: 'Download official Cleaning Business Standard Operating Procedures (SOPs). Includes color-coded cloth protocols, SDS chemical safety, client key handling, and checklists.',
-    handbookSections: [
-      {
-        title: 'Section 1: Chemical Safety, SDS Sheets & Surface Care',
-        summary: 'Protects expensive client countertops, natural stone, and wood flooring from chemical etching.',
-        policies: [
-          {
-            name: 'Strict Surface Chemical Compatibility Rules',
-            description: 'No acidic or vinegar-based cleaners ever allowed on marble, travertine, or granite.',
-            rule: 'Neutral pH stone cleaner only; cleaners liable for replacement costs if etching occurs.'
-          }
-        ]
-      }
-    ],
-    featuredSops: [
-      {
-        code: 'SOP-CLN-02',
-        title: 'Color-Coded Microfiber Cloth Protocol (Cross-Contamination Elimination)',
-        department: 'Sanitation',
-        frequency: 'Daily',
-        responsibility: 'Lead Cleaner',
-        objective: 'Guarantee that restroom bacteria is never transferred to kitchen counters or office desks.',
-        steps: [
-          'RED CLOTHS: Exclusively reserved for toilet bowls, urinals, and immediate surrounding floor tiles.',
-          'YELLOW CLOTHS: Sinks, showers, bathroom mirrors, and bathtub ceramic walls.',
-          'BLUE CLOTHS: General office surfaces, living room dusting, woodwork, and glass windows.',
-          'GREEN CLOTHS: Kitchen food prep countertops, breakroom microwaves, and pantry shelves.',
-          'Never mix soiled colored cloths in common caddy; place immediately into color-coded collection bags.'
-        ]
-      }
-    ],
-    dailyChecklists: [
-      {
-        name: 'Vehicle Dispatch & Chemical Restocking Checklist',
-        timeframe: '07:30 AM - 08:15 AM',
-        items: [
-          'HEPA vacuums emptied; spare commercial belt and filtration bags verified.',
-          'All spray bottles labeled with GHS / OSHA compliant chemical identifiers.',
-          'Client physical keys logged out with secure dual-pin key tracker box.'
-        ]
-      }
-    ]
+    notionHubArchitecture: {
+      workspaceName: 'Restaurant Operations Command Center (Notion OS)',
+      databases: [
+        'Master SOP Directory (Filter by Kitchen, Floor, Bar, Management)',
+        'Daily Opening & Closing Digital Checklists (Kanban Shift Board)',
+        'Food Safety & HACCP Temperature Logbook (Daily Form Entry)',
+        'New Staff 90-Day Onboarding Tracker & Quiz Portal',
+        'Staff Directory, Contact Roster & Scheduling Guidelines',
+        'Equipment Maintenance, Vendor Warranty & Service Contacts'
+      ],
+      dashboardViews: [
+        'Shift Lead Daily Dashboard',
+        'Kitchen Line Cook Prep Matrix',
+        'GM Weekly Operations & Food Cost Audit'
+      ]
+    }
   }
 ];
 

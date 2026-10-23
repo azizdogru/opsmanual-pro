@@ -13,6 +13,8 @@ import {
   Download,
   BookOpen,
   ListChecks,
+  Milestone,
+  Layers,
 } from 'lucide-react';
 
 interface Props {
@@ -20,10 +22,10 @@ interface Props {
 }
 
 export default function SopInteractiveViewer({ kit }: Props) {
-  const [activeTab, setActiveTab] = useState<'handbook' | 'sops' | 'checklists' | 'signoff'>('sops');
+  const [activeTab, setActiveTab] = useState<'sops' | 'handbook' | 'onboarding' | 'checklists' | 'notion' | 'signoff'>('sops');
   const [selectedSopIndex, setSelectedSopIndex] = useState(0);
 
-  const currentSop = kit.featuredSops[selectedSopIndex] || kit.featuredSops[0];
+  const currentSop = kit.comprehensiveSops[selectedSopIndex] || kit.comprehensiveSops[0];
 
   return (
     <div className="w-full my-12 rounded-2xl border border-zinc-800 bg-zinc-950/90 p-6 md:p-8 backdrop-blur-xl shadow-2xl">
@@ -34,16 +36,16 @@ export default function SopInteractiveViewer({ kit }: Props) {
             <span>Interactive Operations Viewer (Look Inside)</span>
           </div>
           <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
-            Enterprise SOP & Employee Handbook Architecture
+            Complete Operations Manual & Regulatory Handbook
           </h3>
           <p className="text-sm text-zinc-400 mt-1">
-            Preview the exact protocols, checklists, and legal clauses included in the unlocked Word (.docx) & Notion kit.
+            Preview the exact protocols, employee policies, onboarding roadmaps, and Notion architecture included in this kit.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs font-mono text-zinc-400">{kit.docPageCount} Fully Formatted Pages</span>
+          <span className="text-xs font-mono text-zinc-400">{kit.verifiedPageCount} Formatted Pages in Word (.docx)</span>
         </div>
       </div>
 
@@ -51,7 +53,7 @@ export default function SopInteractiveViewer({ kit }: Props) {
       <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-6 border-b border-zinc-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('sops')}
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
             activeTab === 'sops'
               ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
               : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
@@ -63,38 +65,62 @@ export default function SopInteractiveViewer({ kit }: Props) {
 
         <button
           onClick={() => setActiveTab('handbook')}
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
             activeTab === 'handbook'
               ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
               : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
           }`}
         >
           <BookOpen className="h-3.5 w-3.5" />
-          <span>2. Employee Handbook Policies</span>
+          <span>2. Employee Handbook ({kit.companyPolicies.length} Statutory Policies)</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('onboarding')}
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+            activeTab === 'onboarding'
+              ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
+              : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
+          }`}
+        >
+          <Milestone className="h-3.5 w-3.5" />
+          <span>3. 90-Day Onboarding Roadmap</span>
         </button>
 
         <button
           onClick={() => setActiveTab('checklists')}
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
             activeTab === 'checklists'
               ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
               : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
           }`}
         >
           <ListChecks className="h-3.5 w-3.5" />
-          <span>3. Daily Audit Punchlists</span>
+          <span>4. Daily Shift Punchlists</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('notion')}
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+            activeTab === 'notion'
+              ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
+              : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
+          }`}
+        >
+          <Layers className="h-3.5 w-3.5" />
+          <span>5. Notion Hub OS Architecture</span>
         </button>
 
         <button
           onClick={() => setActiveTab('signoff')}
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-bold whitespace-nowrap transition-all ${
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
             activeTab === 'signoff'
               ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
               : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
           }`}
         >
           <ShieldCheck className="h-3.5 w-3.5" />
-          <span>4. Legal Employee Sign-Off Form</span>
+          <span>6. Legal Sign-Off Form</span>
         </button>
       </div>
 
@@ -102,9 +128,8 @@ export default function SopInteractiveViewer({ kit }: Props) {
       <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
         {activeTab === 'sops' && (
           <div>
-            {/* SOP Picker Sub-buttons */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {kit.featuredSops.map((sop, idx) => (
+              {kit.comprehensiveSops.map((sop, idx) => (
                 <button
                   key={sop.code}
                   onClick={() => setSelectedSopIndex(idx)}
@@ -119,7 +144,6 @@ export default function SopInteractiveViewer({ kit }: Props) {
               ))}
             </div>
 
-            {/* Render Current SOP Procedure */}
             <div className="rounded-xl border border-zinc-800/80 bg-zinc-950 p-6 font-sans">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-zinc-800 pb-4">
                 <div>
@@ -145,13 +169,23 @@ export default function SopInteractiveViewer({ kit }: Props) {
                 </div>
               </div>
 
-              {/* Step Sequence */}
+              <div className="mt-4 p-3 rounded-lg bg-zinc-900/40 border border-zinc-800/60 text-xs">
+                <span className="text-zinc-400 font-bold block mb-1.5">Required Tools & Materials:</span>
+                <div className="flex flex-wrap gap-2">
+                  {currentSop.prerequisites.map((pre, pIdx) => (
+                    <span key={pIdx} className="bg-zinc-800/80 text-zinc-300 px-2 py-0.5 rounded text-[11px]">
+                      • {pre}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <div className="mt-6">
                 <span className="text-xs uppercase tracking-wider font-bold text-zinc-400 mb-3 block">
-                  Mandatory Execution Sequence:
+                  Mandatory Execution Sequence (Step-by-Step):
                 </span>
                 <div className="space-y-3">
-                  {currentSop.steps.map((step, sIdx) => (
+                  {currentSop.executionSteps.map((step, sIdx) => (
                     <div key={sIdx} className="flex items-start gap-3 text-xs leading-relaxed">
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/10 font-bold text-emerald-400 text-[11px]">
                         {sIdx + 1}
@@ -162,43 +196,63 @@ export default function SopInteractiveViewer({ kit }: Props) {
                 </div>
               </div>
 
-              {/* Compliance Box */}
-              {currentSop.safetyOrComplianceNote && (
-                <div className="mt-6 flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-200">
-                  <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400 mt-0.5" />
-                  <div>
-                    <strong className="text-amber-300">Safety & Compliance Protocol: </strong>
-                    {currentSop.safetyOrComplianceNote}
-                  </div>
+              <div className="mt-6 flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-3.5 text-xs text-amber-200">
+                <AlertTriangle className="h-4 w-4 shrink-0 text-amber-400 mt-0.5" />
+                <div>
+                  <strong className="text-amber-300">Regulatory Standard & Verification: </strong>
+                  {currentSop.regulatoryStandard} — {currentSop.verificationStandard}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         )}
 
         {activeTab === 'handbook' && (
-          <div className="space-y-6">
-            {kit.handbookSections.map((sec, i) => (
-              <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-                <h4 className="text-base font-bold text-white mb-1">{sec.title}</h4>
-                <p className="text-xs text-zinc-400 mb-4">{sec.summary}</p>
-                <div className="space-y-3">
-                  {sec.policies.map((pol, pIdx) => (
-                    <div
-                      key={pIdx}
-                      className="p-3.5 rounded-lg bg-zinc-900/60 border border-zinc-800/80 text-xs"
-                    >
-                      <div className="font-bold text-white mb-1 flex items-center gap-2">
-                        <CheckCircle className="h-3.5 w-3.5 text-emerald-400" />
-                        <span>{pol.name}</span>
-                      </div>
-                      <p className="text-zinc-300 leading-relaxed mb-2">{pol.description}</p>
-                      <div className="text-[11px] text-zinc-400">
-                        <strong className="text-emerald-400 font-mono">Enforcement Standard: </strong>
-                        {pol.rule}
-                      </div>
+          <div className="space-y-4">
+            {kit.companyPolicies.map((pol) => (
+              <div key={pol.code} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5 text-xs">
+                <div className="flex items-center justify-between gap-2 border-b border-zinc-800/80 pb-3 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono font-bold text-emerald-400">[{pol.code}]</span>
+                    <h4 className="font-bold text-white text-sm">{pol.name}</h4>
+                  </div>
+                  <span className="text-[11px] text-zinc-400 bg-zinc-800 px-2 py-0.5 rounded">
+                    {pol.category}
+                  </span>
+                </div>
+                <p className="text-zinc-300 leading-relaxed mb-3">
+                  {pol.policyStatement}
+                </p>
+                <div className="p-3 rounded-lg bg-zinc-900/60 border border-zinc-800 text-[11px] text-zinc-400 space-y-1">
+                  <div><strong className="text-emerald-400">Enforcement Protocol: </strong>{pol.enforcementProtocol}</div>
+                  {pol.statutoryLegalReference && (
+                    <div><strong className="text-zinc-300">Legal Authority Reference: </strong>{pol.statutoryLegalReference}</div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {activeTab === 'onboarding' && (
+          <div className="space-y-4">
+            {kit.onboardingRoadmap.map((mile, i) => (
+              <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5 text-xs">
+                <div className="flex items-center justify-between border-b border-zinc-800 pb-3 mb-3">
+                  <h4 className="text-sm font-bold text-emerald-400">{mile.dayWindow}</h4>
+                  <span className="text-zinc-400">Milestone Progression</span>
+                </div>
+                <p className="text-zinc-300 mb-3"><strong className="text-white">Objective: </strong>{mile.learningObjective}</p>
+                <div className="space-y-1.5 mb-3">
+                  {mile.deliverables.map((del, dIdx) => (
+                    <div key={dIdx} className="flex items-center gap-2 text-zinc-300">
+                      <CheckCircle className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+                      <span>{del}</span>
                     </div>
                   ))}
+                </div>
+                <div className="p-2.5 rounded bg-zinc-900/80 text-[11px] text-zinc-400">
+                  <strong className="text-emerald-300">Passing Evaluation Standard: </strong>{mile.evaluationCriterion}
                 </div>
               </div>
             ))}
@@ -206,23 +260,19 @@ export default function SopInteractiveViewer({ kit }: Props) {
         )}
 
         {activeTab === 'checklists' && (
-          <div className="space-y-6">
+          <div className="space-y-4">
             {kit.dailyChecklists.map((chk, i) => (
-              <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-                <div className="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
-                  <h4 className="text-base font-bold text-white">{chk.name}</h4>
-                  <span className="text-xs font-mono font-bold text-emerald-400">{chk.timeframe}</span>
+              <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-950 p-5 text-xs">
+                <div className="flex items-center justify-between border-b border-zinc-800 pb-3 mb-3">
+                  <h4 className="font-bold text-white text-sm">{chk.name}</h4>
+                  <span className="font-mono text-emerald-400">{chk.shiftTime}</span>
                 </div>
+                <div className="text-zinc-400 mb-3">Role Accountability: <strong className="text-zinc-200">{chk.responsibleRole}</strong></div>
                 <div className="space-y-2">
-                  {chk.items.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 p-2.5 rounded-lg bg-zinc-900/40 border border-zinc-800/60 text-xs text-zinc-300"
-                    >
-                      <div className="h-4 w-4 shrink-0 rounded border border-emerald-500/60 flex items-center justify-center text-emerald-400">
-                        ✓
-                      </div>
-                      <span>{item}</span>
+                  {chk.tasks.map((task, tIdx) => (
+                    <div key={tIdx} className="flex items-center gap-2.5 p-2 rounded bg-zinc-900/60 border border-zinc-800/80 text-zinc-300">
+                      <span className="text-emerald-400 font-bold">[  ]</span>
+                      <span>{task}</span>
                     </div>
                   ))}
                 </div>
@@ -231,14 +281,52 @@ export default function SopInteractiveViewer({ kit }: Props) {
           </div>
         )}
 
+        {activeTab === 'notion' && (
+          <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-xs text-zinc-300 space-y-4">
+            <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
+              <div>
+                <h4 className="text-base font-bold text-white">{kit.notionHubArchitecture.workspaceName}</h4>
+                <p className="text-xs text-zinc-400 mt-1">Pre-built Notion workspace delivered with one-click duplicate token upon checkout.</p>
+              </div>
+              <span className="rounded bg-emerald-500/20 text-emerald-300 px-2.5 py-1 font-bold text-xs">Included in Kit</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
+                <span className="font-bold text-white block mb-2">Connected Notion Databases:</span>
+                <ul className="space-y-2">
+                  {kit.notionHubArchitecture.databases.map((db, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-zinc-400">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span>{db}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
+                <span className="font-bold text-white block mb-2">Custom Dashboard Views:</span>
+                <ul className="space-y-2">
+                  {kit.notionHubArchitecture.dashboardViews.map((view, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-zinc-400">
+                      <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
+                      <span>{view}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
         {activeTab === 'signoff' && (
           <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-xs text-zinc-300 space-y-4">
-            <h4 className="text-base font-bold text-white">Employee Handbook & SOP Acknowledgment Form</h4>
+            <h4 className="text-base font-bold text-white">Employee Handbook & Operational SOP Acknowledgment Form</h4>
             <p className="leading-relaxed">
               I acknowledge that I have received, reviewed, and agree to abide by the policies, safety standards, and
-              Standard Operating Procedures (SOPs) set forth in this operations manual. I understand that my employment
-              remains at-will and that failure to adhere to these operating standards may result in corrective coaching
-              up to and including termination of employment.
+              Standard Operating Procedures (SOPs) set forth in this operations manual. I understand and acknowledge that my
+              employment with the Company remains strictly at-will, meaning that either I or the Company may terminate my
+              employment at any time, with or without cause or prior notice.
             </p>
             <div className="pt-6 border-t border-zinc-800 grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="p-4 rounded-lg bg-zinc-900/60 border border-zinc-800">
@@ -261,7 +349,7 @@ export default function SopInteractiveViewer({ kit }: Props) {
           </div>
           <div className="flex items-center gap-2 text-zinc-300">
             <ShieldCheck className="h-4 w-4 text-emerald-400" />
-            <span>Includes Bonus Printable Daily Audit PDF</span>
+            <span>Includes Bonus 2-Page HACCP Shift Audit PDF</span>
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@ export default function IndustryKitPage({ params }: Props) {
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-center">
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3.5">
             <span className="text-[11px] uppercase tracking-wider text-zinc-400">Manual Length</span>
-            <div className="mt-1 text-lg font-black text-white">{kit.docPageCount} Pages</div>
+            <div className="mt-1 text-lg font-black text-white">{kit.verifiedPageCount} Pages</div>
           </div>
           <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-3.5">
             <span className="text-[11px] uppercase tracking-wider text-zinc-400">Written SOPs</span>

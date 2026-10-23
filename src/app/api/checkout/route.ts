@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     const productDescription = isBundle
       ? 'Instant unlocked access to all industry operations manuals, editable Word .docx files, Notion workspace links, and OSHA compliance checklists.'
       : kit
-      ? `Turnkey editable Word (.docx) & Notion operations manual for ${kit.name}. Includes ${kit.docPageCount} pages, ${kit.sopProcedureCount} written SOPs, and employee acknowledgment forms.`
+      ? `Turnkey editable Word (.docx) & Notion operations manual for ${kit.name}. Includes ${kit.verifiedPageCount} pages, ${kit.sopProcedureCount} written SOPs, and employee acknowledgment forms.`
       : 'Comprehensive B2B operations manual and employee handbook.';
 
     const baseUrl =
