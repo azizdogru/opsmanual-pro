@@ -8,12 +8,12 @@ export const INDUSTRIES: IndustrySopKit[] = [
     tagline: 'Comprehensive Operations Manual, Employee Handbook & Food Safety Systems',
     heroSubtitle: 'Complete enterprise operations manual engineered for independent restaurants, casual dining, and bistros. Features 24 fully articulated SOP procedures, complete 15-clause federal employment handbook, progressive discipline matrix, and ServSafe opening/closing audit punchlists.',
     standardBadge: 'FDA Food Code & OSHA 1910 Compliant',
-    verifiedPageCount: 28, // Genuine verified page count in Word!
-    sopProcedureCount: 16,
-    checklistCount: 6,
+    verifiedPageCount: 14, // Exact verified page count in Word format
+    sopProcedureCount: 8,
+    checklistCount: 3,
     averageOnboardingReductionDays: 9,
-    metaTitle: 'Restaurant SOP Template & Employee Handbook (Word .docx, Notion & PDF)',
-    metaDescription: 'Download official restaurant Standard Operating Procedures (SOPs) and employee handbook. 28+ pages of food safety, dining room steps of service, cash reconciliation, and HR policies.',
+    metaTitle: 'Restaurant SOP Template & Employee Handbook (Word .docx, Google Docs & PDF)',
+    metaDescription: 'Download official restaurant Standard Operating Procedures (SOPs) and employee handbook. 14 pages of food safety, dining room steps of service, cash reconciliation, and HR policies.',
     companyPolicies: [
       {
         code: 'POL-HR-01',
@@ -341,23 +341,7 @@ export const INDUSTRIES: IndustrySopKit[] = [
           'Safe drop envelope inserted into drop safe; alarm set to Away mode; exterior deadbolts verified locked.'
         ]
       }
-    ],
-    notionHubArchitecture: {
-      workspaceName: 'Restaurant Operations Command Center (Notion OS)',
-      databases: [
-        'Master SOP Directory (Filter by Kitchen, Floor, Bar, Management)',
-        'Daily Opening & Closing Digital Checklists (Kanban Shift Board)',
-        'Food Safety & HACCP Temperature Logbook (Daily Form Entry)',
-        'New Staff 90-Day Onboarding Tracker & Quiz Portal',
-        'Staff Directory, Contact Roster & Scheduling Guidelines',
-        'Equipment Maintenance, Vendor Warranty & Service Contacts'
-      ],
-      dashboardViews: [
-        'Shift Lead Daily Dashboard',
-        'Kitchen Line Cook Prep Matrix',
-        'GM Weekly Operations & Food Cost Audit'
-      ]
-    }
+    ]
   }
 ];
 

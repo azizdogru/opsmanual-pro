@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="text-base font-bold text-white">OpsManual Pro</span>
             </div>
             <p className="text-xs leading-relaxed text-zinc-400 max-w-sm">
-              Standard Operating Procedures (SOPs), Employee Handbooks, and Safety Audit Systems for growing SMBs. Fully editable Word (.docx), Notion, and PDF templates.
+              Standard Operating Procedures (SOPs), Employee Handbooks, and Safety Audit Systems for growing SMBs. Fully editable Word (.docx), Google Docs ready, and PDF templates.
             </p>
             <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs text-zinc-400">
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
@@ -52,9 +52,9 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-3">Supported Formats</h4>
             <ul className="space-y-2 text-xs text-zinc-400">
               <li>Microsoft Word (.docx) Fully Editable</li>
-              <li>Notion Workspace 1-Click Duplicate</li>
               <li>Google Docs Compatible</li>
-              <li>Printable Daily Checklist PDF</li>
+              <li>Printable Daily 2-Page Shift Audit PDF</li>
+              <li>Commercial Perpetual License</li>
             </ul>
           </div>
         </div>

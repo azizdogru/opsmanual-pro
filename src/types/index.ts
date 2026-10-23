@@ -50,9 +50,4 @@ export interface IndustrySopKit {
     responsibleRole: string;
     tasks: string[];
   }>;
-  notionHubArchitecture: {
-    workspaceName: string;
-    databases: string[];
-    dashboardViews: string[];
-  };
 }

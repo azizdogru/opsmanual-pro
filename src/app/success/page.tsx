@@ -128,14 +128,14 @@ function SuccessContent() {
           </a>
 
           <a
-            href="https://www.notion.so/templates"
+            href="https://docs.new"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/80 px-6 py-3.5 text-sm font-semibold text-zinc-100 hover:bg-zinc-700 transition-all group"
-            title="Access the Notion template workspace"
+            title="Open Google Docs to import your Word file for online team editing"
           >
             <BookOpen className="h-4 w-4 text-emerald-400 group-hover:scale-110 transition-transform" />
-            <span>Duplicate to Notion Workspace</span>
+            <span>Open Google Docs (docs.new)</span>
             <ExternalLink className="h-3.5 w-3.5 text-zinc-400" />
           </a>
         </div>

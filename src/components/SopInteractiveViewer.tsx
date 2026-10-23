@@ -10,11 +10,9 @@ import {
   Eye,
   AlertTriangle,
   Lock,
-  Download,
   BookOpen,
   ListChecks,
   Milestone,
-  Layers,
 } from 'lucide-react';
 
 interface Props {
@@ -22,7 +20,7 @@ interface Props {
 }
 
 export default function SopInteractiveViewer({ kit }: Props) {
-  const [activeTab, setActiveTab] = useState<'sops' | 'handbook' | 'onboarding' | 'checklists' | 'notion' | 'signoff'>('sops');
+  const [activeTab, setActiveTab] = useState<'sops' | 'handbook' | 'onboarding' | 'checklists' | 'signoff'>('sops');
   const [selectedSopIndex, setSelectedSopIndex] = useState(0);
 
   const currentSop = kit.comprehensiveSops[selectedSopIndex] || kit.comprehensiveSops[0];
@@ -39,7 +37,7 @@ export default function SopInteractiveViewer({ kit }: Props) {
             Complete Operations Manual & Regulatory Handbook
           </h3>
           <p className="text-sm text-zinc-400 mt-1">
-            Preview the exact protocols, employee policies, onboarding roadmaps, and Notion architecture included in this kit.
+            Preview the exact protocols, employee policies, onboarding roadmaps, and compliance punchlists included in this kit.
           </p>
         </div>
 
@@ -100,18 +98,6 @@ export default function SopInteractiveViewer({ kit }: Props) {
         </button>
 
         <button
-          onClick={() => setActiveTab('notion')}
-          className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
-            activeTab === 'notion'
-              ? 'bg-emerald-500 text-zinc-950 shadow-md shadow-emerald-500/20'
-              : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800'
-          }`}
-        >
-          <Layers className="h-3.5 w-3.5" />
-          <span>5. Notion Hub OS Architecture</span>
-        </button>
-
-        <button
           onClick={() => setActiveTab('signoff')}
           className={`flex items-center gap-2 rounded-lg px-3.5 py-2 text-xs font-bold whitespace-nowrap transition-all ${
             activeTab === 'signoff'
@@ -120,7 +106,7 @@ export default function SopInteractiveViewer({ kit }: Props) {
           }`}
         >
           <ShieldCheck className="h-3.5 w-3.5" />
-          <span>6. Legal Sign-Off Form</span>
+          <span>5. Legal Sign-Off Form</span>
         </button>
       </div>
 
@@ -281,44 +267,6 @@ export default function SopInteractiveViewer({ kit }: Props) {
           </div>
         )}
 
-        {activeTab === 'notion' && (
-          <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-xs text-zinc-300 space-y-4">
-            <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
-              <div>
-                <h4 className="text-base font-bold text-white">{kit.notionHubArchitecture.workspaceName}</h4>
-                <p className="text-xs text-zinc-400 mt-1">Pre-built Notion workspace delivered with one-click duplicate token upon checkout.</p>
-              </div>
-              <span className="rounded bg-emerald-500/20 text-emerald-300 px-2.5 py-1 font-bold text-xs">Included in Kit</span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <span className="font-bold text-white block mb-2">Connected Notion Databases:</span>
-                <ul className="space-y-2">
-                  {kit.notionHubArchitecture.databases.map((db, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-zinc-400">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      <span>{db}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-900/60">
-                <span className="font-bold text-white block mb-2">Custom Dashboard Views:</span>
-                <ul className="space-y-2">
-                  {kit.notionHubArchitecture.dashboardViews.map((view, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-zinc-400">
-                      <span className="h-1.5 w-1.5 rounded-full bg-teal-400" />
-                      <span>{view}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        )}
-
         {activeTab === 'signoff' && (
           <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-6 text-xs text-zinc-300 space-y-4">
             <h4 className="text-base font-bold text-white">Employee Handbook & Operational SOP Acknowledgment Form</h4>
@@ -345,7 +293,7 @@ export default function SopInteractiveViewer({ kit }: Props) {
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-zinc-800/80 pt-4 text-xs text-zinc-400">
           <div className="flex items-center gap-2">
             <Lock className="h-3.5 w-3.5 text-emerald-400" />
-            <span>100% Unlocked & Fully Editable in Microsoft Word (.docx), Notion & Google Docs</span>
+            <span>100% Unlocked & Fully Editable in Microsoft Word (.docx) & Google Docs</span>
           </div>
           <div className="flex items-center gap-2 text-zinc-300">
             <ShieldCheck className="h-4 w-4 text-emerald-400" />

@@ -37,7 +37,7 @@ export default function HomePage() {
         </h1>
 
         <p className="mt-6 text-base md:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed">
-          Skip $3,500 HR consultant bills. Download battle-tested, 40+ page industry SOP manuals, employee onboarding handbooks, and daily opening/closing punchlists in fully editable Microsoft Word (.docx) & Notion formats.
+          Skip $3,500 HR consultant bills. Download battle-tested industry operations manuals, statutory employee handbooks, and daily shift audit punchlists in fully editable Microsoft Word (.docx) & Google Docs compatible formats.
         </p>
 
         {/* CTA Group */}
@@ -52,7 +52,7 @@ export default function HomePage() {
             href="#industries"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl border border-zinc-800 bg-zinc-900/80 px-6 py-3.5 text-sm font-semibold text-zinc-200 hover:bg-zinc-800 hover:border-zinc-700 transition-all h-12"
           >
-            <span>Browse 40+ Industry Manuals</span>
+            <span>Browse Industry Manuals</span>
             <ArrowRight className="h-4 w-4 text-zinc-400" />
           </a>
         </div>
@@ -60,13 +60,13 @@ export default function HomePage() {
         {/* Trust Stats Bar */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
           <div className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40">
-            <span className="text-xs text-zinc-400">Average Manual Size</span>
-            <div className="text-2xl font-black text-white mt-1">45+ Pages</div>
-            <span className="text-[11px] text-emerald-400">Per Industry Kit</span>
+            <span className="text-xs text-zinc-400">Manual Length</span>
+            <div className="text-2xl font-black text-white mt-1">14 Pages</div>
+            <span className="text-[11px] text-emerald-400">Standardized & Concise</span>
           </div>
           <div className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40">
             <span className="text-xs text-zinc-400">Written Protocols</span>
-            <div className="text-2xl font-black text-white mt-1">30+ SOPs</div>
+            <div className="text-2xl font-black text-white mt-1">8 SOPs</div>
             <span className="text-[11px] text-emerald-400">Step-by-Step Executable</span>
           </div>
           <div className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40">
@@ -76,8 +76,8 @@ export default function HomePage() {
           </div>
           <div className="p-4 rounded-xl border border-zinc-800/80 bg-zinc-900/40">
             <span className="text-xs text-zinc-400">Supported Formats</span>
-            <div className="text-2xl font-black text-white mt-1">Word & Notion</div>
-            <span className="text-[11px] text-emerald-400">Plus Printable PDF</span>
+            <div className="text-2xl font-black text-white mt-1">Word & Docs</div>
+            <span className="text-[11px] text-emerald-400">Plus Printable 2P PDF</span>
           </div>
         </div>
       </section>
@@ -158,7 +158,7 @@ export default function HomePage() {
             The Master Operations Bundle — $79
           </h2>
           <p className="mt-4 text-sm md:text-base text-zinc-300 max-w-2xl mx-auto leading-relaxed">
-            Get instant, lifetime unlocked access to all current and future industry operations manuals, 200+ Standard Operating Procedures, Notion workspaces, and editable Word (.docx) templates.
+            Get instant, lifetime unlocked access to all current and future industry operations manuals, detailed Standard Operating Procedures, onboarding roadmaps, and editable Word (.docx) templates with shift audit PDF punchlists.
           </p>
 
           <div className="mt-8 flex justify-center">

@@ -34,10 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const kit = INDUSTRY_MAP[params.slug];
   if (!kit) return {};
 
-  const title = kit.metaTitle || `${kit.name} SOP Template & Employee Handbook (Word, Notion)`;
+  const title = kit.metaTitle || `${kit.name} SOP Template & Employee Handbook (Word .docx, Google Docs)`;
   const description =
     kit.metaDescription ||
-    `Turnkey ${kit.name} Standard Operating Procedures (SOPs) and employee onboarding handbook. Fully editable in Word (.docx) and Notion.`;
+    `Turnkey ${kit.name} Standard Operating Procedures (SOPs) and employee onboarding handbook. Fully editable in Microsoft Word (.docx), Google Docs, and printable PDF.`;
 
   return {
     title,
@@ -118,7 +118,7 @@ export default function IndustryKitPage({ params }: Props) {
           <CheckoutButton
             industrySlug={kit.slug}
             plan="single"
-            label="Download Word (.docx) & Notion Kit — $39"
+            label="Download Complete Operations Kit — $39"
             className="w-full sm:w-auto"
           />
           <CheckoutButton
@@ -132,7 +132,7 @@ export default function IndustryKitPage({ params }: Props) {
 
         <div className="mt-4 flex items-center justify-center gap-2 text-xs text-zinc-400">
           <ShieldCheck className="h-4 w-4 text-emerald-400" />
-          <span>Includes Microsoft Word (.docx), Notion 1-Click Copy & Printable Daily Audit PDF</span>
+          <span>Includes Microsoft Word (.docx), Google Docs Ready & Printable 2-Page Shift Audit PDF</span>
         </div>
       </section>
 
@@ -156,7 +156,7 @@ export default function IndustryKitPage({ params }: Props) {
               </div>
               <h3 className="text-base font-bold text-white">Microsoft Word (.docx) Master</h3>
               <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-                Clean, beautifully styled document with placeholders for your company logo, legal entity name, and custom policies. Fully editable in Word, Google Docs, or Apple Pages.
+                Structured {kit.verifiedPageCount}-page operations handbook with company placeholders, department roles, and step-by-step procedures. Unlocked and ready to brand.
               </p>
             </div>
 
@@ -164,9 +164,9 @@ export default function IndustryKitPage({ params }: Props) {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 mb-4">
                 <BookOpen className="h-5 w-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Notion Operations Workspace</h3>
+              <h3 className="text-base font-bold text-white">Google Docs Compatible</h3>
               <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-                One-click duplicate into your company Notion workspace. Searchable SOP database with department filtering, status tags, and shift checklist kanbans.
+                Seamless drag-and-drop import to Google Drive. Clean heading hierarchy and tables make it ready for instant cloud team collaboration.
               </p>
             </div>
 
@@ -174,9 +174,9 @@ export default function IndustryKitPage({ params }: Props) {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 mb-4">
                 <ShieldCheck className="h-5 w-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Printable Shift Audit PDF</h3>
+              <h3 className="text-base font-bold text-white">Printable 2-Page Shift Audit PDF</h3>
               <p className="text-xs text-zinc-400 mt-2 leading-relaxed">
-                Ready-to-print daily opening, closing, and hygiene audit sheets designed to be hung on clipboards in back-of-house or manager stations.
+                Ready-to-print daily opening/closing punchlists and HACCP temperature/equipment verification log designed for back-of-house clipboard auditing.
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function IndustryKitPage({ params }: Props) {
           <CheckoutButton
             industrySlug={kit.slug}
             plan="single"
-            label="Download Word & Notion Kit — $39"
+            label="Download Complete Operations Kit — $39"
           />
         </section>
       </div>

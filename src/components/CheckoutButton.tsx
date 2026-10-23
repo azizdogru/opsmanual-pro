@@ -51,7 +51,7 @@ export default function CheckoutButton({
   const isBundle = plan === 'bundle';
   const defaultLabel = isBundle
     ? 'Get All Industry Kits Master Bundle — $79'
-    : 'Download Word (.docx) & Notion Kit — $39';
+    : 'Download Word (.docx) & PDF Kit — $39';
 
   let variantClasses =
     'bg-emerald-500 hover:bg-emerald-400 text-zinc-950 shadow-emerald-500/25';

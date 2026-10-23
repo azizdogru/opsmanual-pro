@@ -15,13 +15,13 @@ export async function POST(req: Request) {
     const productName = isBundle
       ? 'All-Access Enterprise SOP & Employee Handbook Master Bundle (All Industries)'
       : kit
-      ? `${kit.name} Standard Operating Procedures & Employee Handbook (Word & Notion)`
+      ? `${kit.name} Standard Operating Procedures & Employee Handbook (Word .docx & PDF)`
       : 'Standard Operating Procedures & Employee Handbook Template Kit';
 
     const productDescription = isBundle
-      ? 'Instant unlocked access to all industry operations manuals, editable Word .docx files, Notion workspace links, and OSHA compliance checklists.'
+      ? 'Instant unlocked access to all industry operations manuals, editable Word .docx files, Google Docs ready, and daily shift audit PDF checklists.'
       : kit
-      ? `Turnkey editable Word (.docx) & Notion operations manual for ${kit.name}. Includes ${kit.verifiedPageCount} pages, ${kit.sopProcedureCount} written SOPs, and employee acknowledgment forms.`
+      ? `Turnkey editable Word (.docx) & PDF operations manual for ${kit.name}. Includes ${kit.verifiedPageCount} pages, ${kit.sopProcedureCount} written SOPs, and employee acknowledgment forms.`
       : 'Comprehensive B2B operations manual and employee handbook.';
 
     const baseUrl =

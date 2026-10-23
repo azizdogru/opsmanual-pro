@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://opsmanual-pro.vercel.app'),
   title: 'OpsManual Pro | Enterprise SOP Templates & Employee Handbooks',
   description:
-    'Turnkey Standard Operating Procedures (SOPs), Employee Handbooks, and Safety Compliance Kits for SMBs. Download editable Word (.docx), Notion & PDF packages.',
+    'Turnkey Standard Operating Procedures (SOPs), Employee Handbooks, and Safety Compliance Kits for SMBs. Download editable Word (.docx), Google Docs & printable PDF packages.',
 };
 
 export default function RootLayout({
