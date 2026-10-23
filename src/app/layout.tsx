@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: 'OpsManual Pro | Enterprise SOP Templates & Employee Handbooks',
   description:
     'Turnkey Standard Operating Procedures (SOPs), Employee Handbooks, and Safety Compliance Kits for SMBs. Download editable Word (.docx), Google Docs & printable PDF packages.',
+  verification: {
+    google: 'google4a281205e868ab2c',
+  },
 };
 
 export default function RootLayout({
