@@ -4368,42 +4368,42 @@ export const INDUSTRIES: IndustrySopKit[] = [
     ],
     "dailyChecklists": [
       {
-        "name": "Morning Operatory Sterilization, Waterline Purge & Supply Staging",
-        "shiftTime": "07:30 AM - 08:30 AM",
-        "responsibleRole": "Lead Clinical Assistant / Registered Nurse",
+        "name": "Morning Therapy Suite Preparation & Confidentiality Audit",
+        "shiftTime": "08:00 AM - 09:00 AM",
+        "responsibleRole": "Practice Administrator / Lead Therapist",
         "tasks": [
-          "Deactivate security alarm, power on treatment room dental/medical units, and check master air/water valves.",
-          "Purge operatory waterlines for 2 minutes with antimicrobial treated reservoir water.",
-          "Wipe all operatory contact surfaces with hospital-grade disinfectant wipes; apply fresh barrier film.",
-          "Verify autoclave spore test incubator status (verify zero bacterial growth) and record in sterilization log.",
-          "Retrieve patient treatment charts for day; verify required lab cases, prescriptions, and implants are received.",
-          "Check emergency crash cart: verify oxygen cylinder pressure >1000 psi and AED status light is green."
+          "Activate hallway sound masking (white noise) generators to protect acoustic privacy.",
+          "Review morning clinical intake appointments in HIPAA-compliant EHR; verify digital consent forms.",
+          "Inspect individual consultation therapy rooms: ensure comfortable seating, tissues, and clean water carafes.",
+          "Verify telehealth video room link stability and confirm 256-bit encryption connection.",
+          "Review on-call emergency crisis coverage schedule and verify 988 dispatch numbers.",
+          "Initial morning clinical readiness clipboard at reception desk."
         ]
       },
       {
-        "name": "Mid-Day Instrument Ultrasonic Decontamination & Autoclave Cycling",
-        "shiftTime": "12:30 PM - 01:30 PM",
-        "responsibleRole": "Sterilization Technician",
+        "name": "Mid-Day Session Documentation & Crisis On-Call Standby",
+        "shiftTime": "01:00 PM - 02:00 PM",
+        "responsibleRole": "Clinical Supervisor / On-Call Clinician",
         "tasks": [
-          "Process morning soiled instruments through ultrasonic enzymatic bath for 15 minutes.",
-          "Rinse, dry, and inspect instruments for rust or damage; package in self-sealing chemical indicator pouches.",
-          "Load autoclave and execute full sterilization cycle (250\u00b0F / 15 psi for 30 minutes); verify chemical indicator turns black.",
-          "Inspect operatory sharps containers: replace any container reaching the 3/4 full fill line.",
-          "Conduct secondary wipe-down of all clinical treatment chairs and Mayo stands between morning and afternoon patients.",
-          "Audit midday schedule: confirm afternoon arrivals have completed digital health history updates."
+          "Verify clinicians complete concurrent session progress notes (DAP/SOAP format) within 2 hours.",
+          "Audit high-risk client safety plans (C-SSRS Low/Moderate) and ensure emergency contacts are current.",
+          "Process prescription refill requests and coordinate with referring psychiatrists.",
+          "Confirm physical files retrieved for legacy review are re-locked in fire-rated file vaults.",
+          "Perform midday waiting room sweep: sanitize touchpoints and restock patient informational brochures.",
+          "Check on-call crisis phone battery and cellular network signal."
         ]
       },
       {
-        "name": "End-of-Day Clinical Terminal Clean, Waterline Purge & Vault Lockup",
-        "shiftTime": "05:00 PM - 06:00 PM",
-        "responsibleRole": "Closing Clinical Lead",
+        "name": "Evening Practice Lockdown & Physical Soundproofing Sweep",
+        "shiftTime": "07:30 PM - 08:30 PM",
+        "responsibleRole": "Closing Practice Manager",
         "tasks": [
-          "Flush high-volume evacuation (HVE) lines with enzymatic line cleaner; empty and clean suction traps.",
-          "Purge waterlines dry; turn off master compressor, nitrous/oxygen tanks, and dental unit master switches.",
-          "Execute terminal disinfection: wipe all operatory counters, treatment chairs, and overhead lamps with hospital disinfectant.",
-          "Count controlled substances with oncoming/supervising doctor; record in perpetual DEA log and lock vault.",
-          "Trigger automated daily encrypted cloud backup of EMR database; verify backup status reads 'Complete'.",
-          "Arm facility security alarm, lock medical records closet, and secure exterior entrance doors."
+          "Verify all therapy consultation rooms are vacated; inspect rooms for personal items left by clients.",
+          "Turn off sound masking machines, waiting area lighting, and ambient noise systems.",
+          "Enforce Clean Desk Policy: ensure zero physical PHI or intake notes remain on reception desks.",
+          "Force automatic timeout logout across all reception and clinician computer workstations.",
+          "Deposit copay cash receipts and checks into dual-key depository safe.",
+          "Arm facility security alarm and lock heavy soundproof entrance doors with deadbolts."
         ]
       }
     ]
@@ -5046,42 +5046,42 @@ export const INDUSTRIES: IndustrySopKit[] = [
     ],
     "dailyChecklists": [
       {
-        "name": "Morning Operatory Sterilization, Waterline Purge & Supply Staging",
-        "shiftTime": "07:30 AM - 08:30 AM",
-        "responsibleRole": "Lead Clinical Assistant / Registered Nurse",
+        "name": "Morning Caregiver Field Dispatch & Vitals Kit Audit",
+        "shiftTime": "07:00 AM - 08:30 AM",
+        "responsibleRole": "Clinical Care Coordinator (RN)",
         "tasks": [
-          "Deactivate security alarm, power on treatment room dental/medical units, and check master air/water valves.",
-          "Purge operatory waterlines for 2 minutes with antimicrobial treated reservoir water.",
-          "Wipe all operatory contact surfaces with hospital-grade disinfectant wipes; apply fresh barrier film.",
-          "Verify autoclave spore test incubator status (verify zero bacterial growth) and record in sterilization log.",
-          "Retrieve patient treatment charts for day; verify required lab cases, prescriptions, and implants are received.",
-          "Check emergency crash cart: verify oxygen cylinder pressure >1000 psi and AED status light is green."
+          "Audit daily patient visit manifest in Electronic Visit Verification (EVV) software.",
+          "Verify field caregiver PPE supply kits: sterile gloves, surgical masks, sanitizing wipes.",
+          "Calibrate portable digital blood pressure monitors, pulse oximeters, and temporal thermometers.",
+          "Review daily medication change orders received from attending physicians.",
+          "Confirm caregiver arrival check-ins via mobile GPS EVV app within 15 minutes of scheduled window.",
+          "Brief caregivers on high-acuity fall risk and dementia patient protocols."
         ]
       },
       {
-        "name": "Mid-Day Instrument Ultrasonic Decontamination & Autoclave Cycling",
-        "shiftTime": "12:30 PM - 01:30 PM",
-        "responsibleRole": "Sterilization Technician",
+        "name": "Mid-Day Clinical Progress & Care Plan Reconciliation",
+        "shiftTime": "12:30 PM - 02:00 PM",
+        "responsibleRole": "Director of Clinical Services",
         "tasks": [
-          "Process morning soiled instruments through ultrasonic enzymatic bath for 15 minutes.",
-          "Rinse, dry, and inspect instruments for rust or damage; package in self-sealing chemical indicator pouches.",
-          "Load autoclave and execute full sterilization cycle (250\u00b0F / 15 psi for 30 minutes); verify chemical indicator turns black.",
-          "Inspect operatory sharps containers: replace any container reaching the 3/4 full fill line.",
-          "Conduct secondary wipe-down of all clinical treatment chairs and Mayo stands between morning and afternoon patients.",
-          "Audit midday schedule: confirm afternoon arrivals have completed digital health history updates."
+          "Review incoming caregiver encounter logs in mobile EHR: flag any vital sign anomalies.",
+          "Coordinate with home physical therapists and occupational therapists regarding mobility milestones.",
+          "Follow up on missed EVV clock-ins; dispatch backup on-call caregiver if delay exceeds 30 minutes.",
+          "Process family care conference requests and update authorized contact rosters.",
+          "Verify patient medication administration records (MAR) reflect 100% on-time doses.",
+          "Audit durable medical equipment (DME) deliveries (oxygen concentrators, hospital beds, walkers)."
         ]
       },
       {
-        "name": "End-of-Day Clinical Terminal Clean, Waterline Purge & Vault Lockup",
-        "shiftTime": "05:00 PM - 06:00 PM",
-        "responsibleRole": "Closing Clinical Lead",
+        "name": "Evening Caregiver Shift Handover & On-Call Nurse Dispatch",
+        "shiftTime": "05:30 PM - 07:00 PM",
+        "responsibleRole": "Evening Triage Nurse (RN)",
         "tasks": [
-          "Flush high-volume evacuation (HVE) lines with enzymatic line cleaner; empty and clean suction traps.",
-          "Purge waterlines dry; turn off master compressor, nitrous/oxygen tanks, and dental unit master switches.",
-          "Execute terminal disinfection: wipe all operatory counters, treatment chairs, and overhead lamps with hospital disinfectant.",
-          "Count controlled substances with oncoming/supervising doctor; record in perpetual DEA log and lock vault.",
-          "Trigger automated daily encrypted cloud backup of EMR database; verify backup status reads 'Complete'.",
-          "Arm facility security alarm, lock medical records closet, and secure exterior entrance doors."
+          "Reconcile daily EVV timesheets and verify statutory Medicaid/Medicare visit compliance.",
+          "Transfer after-hours patient emergency triage line to designated on-call Registered Nurse.",
+          "Verify overnight respite and 24/7 continuous care home aides have clocked in on-site.",
+          "Archive completed patient daily visit notes in permanent HIPAA cloud repository.",
+          "Review overnight critical escalation protocol with physician answering service.",
+          "Lock clinical supply room, arm office alarm system, and secure facility."
         ]
       }
     ]
