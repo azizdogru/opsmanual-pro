@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Clock,
   DollarSign,
-  FileText,
   Lock,
   Sparkles,
   HelpCircle,
@@ -419,7 +418,7 @@ export default function CompetitorComparisonPage({ params }: Props) {
               Ready to Complete Your Standard Operating Procedures (SOP) & Policy Manual?
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Skip {{competitor.name}}&apos;s expensive fees and confusing subscriptions. Create your attorney-grade standard operating procedures (sop) & policy manual right now.
+              Skip {competitor.name}&apos;s expensive fees and confusing subscriptions. Create your attorney-grade standard operating procedures (sop) & policy manual right now.
             </p>
             <div className="pt-2">
               <Link
