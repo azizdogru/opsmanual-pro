@@ -1,4 +1,9 @@
 import { SisterTools } from './SisterTools';
+import { TrustBar } from './TrustBar';
+import { SeoSchema } from './SeoSchema';
+import { DwellTimeWidget } from './DwellTimeWidget';
+import { OrderBumpCard } from './OrderBumpCard';
+
 import Link from 'next/link';
 import { BookOpen, ShieldCheck, Heart } from 'lucide-react';
 
@@ -6,6 +11,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-900 bg-zinc-950 py-12 text-zinc-400">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <DwellTimeWidget />
+        <OrderBumpCard />
+        <TrustBar />
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
@@ -74,6 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
+              <SeoSchema />
       </div>
     </footer>
   );
