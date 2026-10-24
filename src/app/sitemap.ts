@@ -11,7 +11,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+    const vsRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/vs/legalzoom`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/vs/rocket-lawyer`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+  ];
+
   return [
+    ...vsRoutes,
     {
       url: baseUrl,
       lastModified: new Date(),
