@@ -1,3 +1,4 @@
+// 2026 Verified Comparison
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
