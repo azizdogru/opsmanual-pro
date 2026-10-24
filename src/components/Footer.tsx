@@ -1,3 +1,4 @@
+import { SisterTools } from './SisterTools';
 import Link from 'next/link';
 import { BookOpen, ShieldCheck, Heart } from 'lucide-react';
 
@@ -59,7 +60,10 @@ export default function Footer() {
           </div>
         </div>
 
+        <SisterTools />
+
         <div className="border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+
           <div>
             © {new Date().getFullYear()} OpsManual Pro. All rights reserved. Built for operational excellence & B2B compliance.
           </div>
@@ -69,6 +73,7 @@ export default function Footer() {
             <Link href="/#pricing" className="hover:text-zinc-300">Pricing</Link>
           </div>
         </div>
+
       </div>
     </footer>
   );
