@@ -10,12 +10,54 @@ export function SeoSchema() {
       '@type': 'Brand',
       name: "OpsManual Pro",
     },
+        image: 'https://opsmanual-pro.vercel.app/og-image.png',
+    sku: 'OPSMANUAL-PRO-PRO-2026',
+    brand: {
+      '@type': 'Brand',
+      name: 'Standard Operating Procedures Manual',
+    },
     offers: {
       '@type': 'Offer',
-      price: "49.00",
+      price: '39.00',
       priceCurrency: 'USD',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
-      url: "https://opsmanual-pro.vercel.app",
+      url: 'https://opsmanual-pro.vercel.app',
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'US',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+        merchantReturnDays: 30,
+        returnMethod: 'https://schema.org/ReturnOnline',
+        returnFees: 'https://schema.org/FreeReturn',
+      },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: '0.00',
+          currency: 'USD',
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'US',
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 0,
+            maxValue: 0,
+            unitCode: 'DAY',
+          },
+        },
+      },
     },
     aggregateRating: {
       '@type': 'AggregateRating',
