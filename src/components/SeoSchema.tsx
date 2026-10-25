@@ -12,10 +12,6 @@ export function SeoSchema() {
     },
         image: 'https://opsmanual-pro.vercel.app/og-image.png',
     sku: 'OPSMANUAL-PRO-PRO-2026',
-    brand: {
-      '@type': 'Brand',
-      name: 'Standard Operating Procedures Manual',
-    },
     offers: {
       '@type': 'Offer',
       price: '39.00',
