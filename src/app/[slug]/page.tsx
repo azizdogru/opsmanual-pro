@@ -39,7 +39,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     kit.metaDescription ||
     `Turnkey ${kit.name} Standard Operating Procedures (SOPs) and employee onboarding handbook. Fully editable in Microsoft Word (.docx), Google Docs, and printable PDF.`;
 
+  const canonicalUrl = `https://opsmanual-pro.vercel.app/${params.slug}`;
+
   return {
+    alternates: {
+      canonical: canonicalUrl,
+    },
     title,
     description,
     openGraph: {
