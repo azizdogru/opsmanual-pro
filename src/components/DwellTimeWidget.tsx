@@ -115,7 +115,7 @@ export function DwellTimeWidget() {
           href={`/${selectedIndustry?.slug || ''}`}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition shrink-0"
         >
-          <span>Get {selectedIndustry?.name.split(' ')[0]} Operations Manual</span>
+          <span>Get {selectedIndustry?.name ? selectedIndustry.name.split(' ')[0] : 'Industry'} Operations Manual</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </Link>
       </div>
