@@ -38,13 +38,13 @@ export default function CheckoutButton({
       if (data?.url) {
         window.location.href = data.url;
       } else {
-        window.location.href =
-          'https://depositdemand.lemonsqueezy.com/checkout/buy/44ba076c-b57d-429b-af3d-6962ccf4dc46';
+        alert(data?.error || 'Payment gateway temporarily unavailable. Please try again shortly.');
+        setLoading(false);
       }
     } catch (err) {
       console.error('Checkout error:', err);
-      window.location.href =
-        'https://depositdemand.lemonsqueezy.com/checkout/buy/44ba076c-b57d-429b-af3d-6962ccf4dc46';
+      alert('Unable to initiate checkout. Please check your connection and try again.');
+      setLoading(false);
     }
   };
 
