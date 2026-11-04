@@ -76,6 +76,8 @@ export default function Footer() {
             © {new Date().getFullYear()} OpsManual Pro. All rights reserved. Built for operational excellence & B2B compliance.
           </div>
           <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-slate-300 transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-slate-300 transition">Terms of Service</Link>
             <Link href="/" className="hover:text-zinc-300">Home</Link>
             <Link href="/#industries" className="hover:text-zinc-300">All Kits</Link>
             <Link href="/#pricing" className="hover:text-zinc-300">Pricing</Link>
