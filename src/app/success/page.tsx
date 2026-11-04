@@ -21,6 +21,7 @@ import {
 
 function SuccessContent() {
   const searchParams = useSearchParams();
+  const token = searchParams.get('token') || searchParams.get('order_id') || searchParams.get('checkout_id') || '';
   const industrySlug =
     searchParams.get('industry') || 'restaurant-hospitality-sop-handbook-template';
   const plan = searchParams.get('plan') || 'single';
@@ -37,40 +38,99 @@ function SuccessContent() {
     .toUpperCase()}-2026`;
 
   useEffect(() => {
-    try {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#10b981', '#14b8a6', '#06b6d4', '#3b82f6'],
-      });
-    } catch (e) {
-      // ignore
+    if (token) {
+      try {
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#10b981', '#14b8a6', '#06b6d4', '#3b82f6'],
+        });
+      } catch (e) {
+        // ignore
+      }
     }
-  }, []);
+  }, [token]);
+
+  const handleStartCheckout = async () => {
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ industrySlug, plan: 'single' }),
+      });
+      const data = await res.json();
+      if (data.url || data.checkoutUrl) {
+        window.location.href = data.url || data.checkoutUrl;
+      }
+    } catch (e) {
+      console.error(e);
+      window.location.href = '/#pricing';
+    }
+  };
 
   const handleDocxDownload = async (targetKit = kit) => {
+    if (!token) {
+      alert('Valid purchase session required. Please complete checkout to download.');
+      return;
+    }
     try {
       setDownloading(true);
-      const buffer = await generateIndustryDocx(targetKit);
-      const blob = new Blob([buffer as unknown as BlobPart], {
-        type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${targetKit.slug}-employee-handbook-sop-manual.docx`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      window.location.href = `/api/download?industry=${targetKit.slug}&token=${encodeURIComponent(token)}`;
     } catch (err) {
-      console.error('Download error, falling back to API:', err);
-      window.location.href = `/api/download?industry=${targetKit.slug}`;
+      console.error('Download error:', err);
     } finally {
       setTimeout(() => setDownloading(false), 1000);
     }
   };
+
+  if (!token) {
+    return (
+      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center text-white">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white transition mb-8"
+        >
+          <ArrowRight className="h-4 w-4 rotate-180" />
+          <span>Back to OpsManual Pro</span>
+        </Link>
+
+        <div className="rounded-3xl border border-amber-500/30 bg-slate-900/90 p-8 sm:p-12 shadow-2xl space-y-6">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20">
+            <ShieldCheck className="h-8 w-8" />
+          </div>
+
+          <div className="space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+              Purchase Verification Required
+            </span>
+            <h1 className="text-2xl sm:text-3xl font-black text-white">
+              Operations Manual Access Protected
+            </h1>
+            <p className="text-sm text-slate-400 max-w-lg mx-auto leading-relaxed">
+              No active purchase authorization was detected in this browser session. If you have already completed checkout, please click the download link in your order receipt email or unlock instant access below.
+            </p>
+          </div>
+
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={handleStartCheckout}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 px-8 py-3.5 text-sm font-bold text-white shadow-xl shadow-emerald-500/25 hover:from-emerald-400 hover:to-teal-500 transition active:scale-95"
+            >
+              <Download className="h-4 w-4" />
+              <span>Unlock SOP Manual ($39)</span>
+            </button>
+            <Link
+              href="/#industries"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/80 px-6 py-3.5 text-sm font-semibold text-slate-200 hover:bg-slate-700 transition"
+            >
+              <span>Explore All Industries</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const copyLicense = () => {
     navigator.clipboard.writeText(licenseKey);

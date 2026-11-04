@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { INDUSTRY_MAP } from '@/data/industries';
 import { generateIndustryDocx } from '@/lib/docxGenerator';
+import { verifyDownloadToken } from '@/lib/downloadAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +9,14 @@ export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
     const slug = searchParams.get('industry');
+    const token = searchParams.get('token');
+
+    if (!verifyDownloadToken(token, 'opsmanual_download')) {
+      return NextResponse.json(
+        { error: 'Valid purchase token required to download standard operating procedure manual' },
+        { status: 403 }
+      );
+    }
 
     if (!slug || !INDUSTRY_MAP[slug]) {
       return NextResponse.json(

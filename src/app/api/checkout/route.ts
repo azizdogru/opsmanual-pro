@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { INDUSTRY_MAP } from '@/data/industries';
+import { createDownloadToken } from '@/lib/downloadAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,7 +29,8 @@ export async function POST(req: Request) {
       process.env.NEXT_PUBLIC_BASE_URL ||
       (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://opsmanual-pro.vercel.app');
 
-    const redirectUrl = `${baseUrl}/success?plan=${plan}${industrySlug ? `&industry=${industrySlug}` : ''}`;
+    const downloadToken = createDownloadToken('opsmanual_download');
+    const redirectUrl = `${baseUrl}/success?plan=${plan}${industrySlug ? `&industry=${industrySlug}` : ''}&token=${encodeURIComponent(downloadToken)}`;
 
     const apiKey = process.env.LEMONSQUEEZY_API_KEY;
     const storeId = process.env.LEMONSQUEEZY_STORE_ID || '502656';
