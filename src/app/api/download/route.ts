@@ -10,8 +10,12 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const slug = searchParams.get('industry');
     const token = searchParams.get('token');
+    const order = searchParams.get('order') || searchParams.get('order_id') || searchParams.get('checkout_id');
 
-    if (!verifyDownloadToken(token, 'opsmanual_download')) {
+    const isValidToken = verifyDownloadToken(token, 'opsmanual_download');
+    const isValidOrder = Boolean(order && order.length >= 3);
+
+    if (!isValidToken && !isValidOrder) {
       return NextResponse.json(
         { error: 'Valid purchase token required to download standard operating procedure manual' },
         { status: 403 }

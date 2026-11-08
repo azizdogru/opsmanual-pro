@@ -21,10 +21,14 @@ import {
 
 function SuccessContent() {
   const searchParams = useSearchParams();
-  const token = searchParams.get('token') || searchParams.get('order_id') || searchParams.get('checkout_id') || '';
+  const urlToken = searchParams.get('token') || '';
+  const orderParam = searchParams.get('order') || searchParams.get('order_id') || searchParams.get('checkout_id') || '';
   const industrySlug =
     searchParams.get('industry') || 'restaurant-hospitality-sop-handbook-template';
   const plan = searchParams.get('plan') || 'single';
+
+  const [activeToken, setActiveToken] = useState<string>(urlToken);
+  const [orderId, setOrderId] = useState<string>(orderParam);
 
   const kit = INDUSTRY_MAP[industrySlug] || INDUSTRIES[0];
   const isBundle = plan === 'bundle';
@@ -38,7 +42,35 @@ function SuccessContent() {
     .toUpperCase()}-2026`;
 
   useEffect(() => {
-    if (token) {
+    if (urlToken) {
+      setActiveToken(urlToken);
+      try {
+        localStorage.setItem('opsmanual_download_token', urlToken);
+      } catch {}
+    } else {
+      try {
+        const cached = localStorage.getItem('opsmanual_download_token');
+        if (cached) setActiveToken(cached);
+      } catch {}
+    }
+
+    if (orderParam) {
+      setOrderId(orderParam);
+      try {
+        localStorage.setItem('opsmanual_order_id', orderParam);
+      } catch {}
+    } else {
+      try {
+        const cachedOrder = localStorage.getItem('opsmanual_order_id');
+        if (cachedOrder) setOrderId(cachedOrder);
+      } catch {}
+    }
+  }, [urlToken, orderParam]);
+
+  const hasAccess = Boolean(activeToken || orderId);
+
+  useEffect(() => {
+    if (hasAccess) {
       try {
         confetti({
           particleCount: 100,
@@ -50,7 +82,7 @@ function SuccessContent() {
         // ignore
       }
     }
-  }, [token]);
+  }, [hasAccess]);
 
   const handleStartCheckout = async () => {
     try {
@@ -70,13 +102,15 @@ function SuccessContent() {
   };
 
   const handleDocxDownload = async (targetKit = kit) => {
-    if (!token) {
+    if (!hasAccess) {
       alert('Valid purchase session required. Please complete checkout to download.');
       return;
     }
     try {
       setDownloading(true);
-      window.location.href = `/api/download?industry=${targetKit.slug}&token=${encodeURIComponent(token)}`;
+      const tokenQuery = activeToken ? `&token=${encodeURIComponent(activeToken)}` : '';
+      const orderQuery = orderId ? `&order=${encodeURIComponent(orderId)}` : '';
+      window.location.href = `/api/download?industry=${targetKit.slug}${tokenQuery}${orderQuery}`;
     } catch (err) {
       console.error('Download error:', err);
     } finally {
@@ -84,7 +118,7 @@ function SuccessContent() {
     }
   };
 
-  if (!token) {
+  if (!hasAccess) {
     return (
       <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center text-white">
         <Link

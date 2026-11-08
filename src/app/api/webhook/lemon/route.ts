@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+import { createDownloadToken } from '@/lib/downloadAuth';
 
 export async function POST(req: NextRequest) {
   try {
@@ -67,8 +68,11 @@ export async function POST(req: NextRequest) {
       const receiptUrl = attributes.urls?.receipt || '';
       const productName = attributes.first_order_item?.variant_name || attributes.first_order_item?.product_name || 'Standard Operating Procedures (SOP) & Policy Manual';
 
+      // Generate a secure 30-day HMAC download token for instant customer fulfillment
+      const downloadToken = createDownloadToken('opsmanual_download', 720);
+
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://opsmanual-pro.vercel.app';
-      const accessUrl = `${baseUrl}/success?order=${orderNumber}`;
+      const accessUrl = `${baseUrl}/success?order=${orderNumber}&token=${encodeURIComponent(downloadToken)}`;
 
       // Automated email delivery via Resend API
       const resendApiKey = process.env.RESEND_API_KEY;
@@ -93,30 +97,31 @@ export async function POST(req: NextRequest) {
 <body>
   <div class="card">
     <div class="header">
-      <h1 style="margin: 0; font-size: 24px; font-weight: 800;">Payment Confirmed</h1>
+      <h1 style="margin: 0; font-size: 24px; font-weight: 800;">Order Confirmed</h1>
       <p style="margin: 8px 0 0; color: #94a3b8; font-size: 14px;">Order #${orderNumber} • ${totalFormatted}</p>
     </div>
     <div class="content">
       <p>Hello <strong>${customerName}</strong>,</p>
-      <p>Thank you for your order. Your official <strong>${productName}</strong> has been generated and is ready for permanent download.</p>
+      <p>Thank you for purchasing <strong>${productName}</strong>. Your complete industry-specific Standard Operating Procedures and Employee Handbook are ready for instant download in editable Word (.docx) format.</p>
       
       <div style="text-align: center;">
-        <a href="${accessUrl}" class="btn">Download Official Document (PDF)</a>
+        <a href="${accessUrl}" class="btn">Download Editable Manual (.DOCX)</a>
       </div>
 
       <div class="info-box">
-        <strong>Document Instructions:</strong>
+        <strong>Getting Started Instructions:</strong>
         <ul style="margin: 8px 0 0; padding-left: 20px;">
-          <li>Review all names, dates, and terms for complete accuracy.</li>
-          <li>Save a signed copy for your permanent records.</li>
-          <li>If required, notarize or serve according to your state statutory instructions.</li>
+          <li>Open the .docx file in Microsoft Word, Google Docs, or Apple Pages.</li>
+          <li>Customize the placeholder brackets with your company name, logo, and policies.</li>
+          <li>Distribute copies to onboarding team members or save as an official company PDF.</li>
+          <li>Bookmark your download link for lifetime access to future manual updates.</li>
         </ul>
       </div>
 
       ${receiptUrl ? `<p style="font-size: 13px; color: #64748b;">Official Lemon Squeezy Receipt: <a href="${receiptUrl}" style="color: #2563eb;">View Receipt</a></p>` : ''}
     </div>
     <div class="footer">
-      <p>Instant Statutory Document Delivery System • 256-Bit SSL Encrypted</p>
+      <p>OpsManual Pro • Enterprise SOP & Employee Handbook Suite • 256-Bit SSL Encrypted</p>
     </div>
   </div>
 </body>
