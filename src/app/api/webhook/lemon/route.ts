@@ -164,6 +164,7 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify({
               from: process.env.EMAIL_FROM || 'OpsManualPro Orders <orders@opsmanual-pro.com>',
               to: [customerEmail],
+            reply_to: process.env.EMAIL_REPLY_TO || 'dogruaziz@gmail.com',
               subject: `Your Official Standard Operating Procedures (SOP) & Policy Manual is Ready (Order #${orderNumber})`,
               html: emailHtml,
             }),
