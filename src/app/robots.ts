@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/'],
+      disallow: ['/api/', '/_next/static/media/'],
     },
     sitemap: 'https://opsmanual-pro.vercel.app/sitemap.xml',
   };

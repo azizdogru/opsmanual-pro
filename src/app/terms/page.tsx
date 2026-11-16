@@ -5,6 +5,13 @@ import { ArrowLeft, FileText, AlertTriangle, Scale, ShieldCheck } from 'lucide-r
 export const metadata = {
   title: 'Terms of Service | OpsManual Pro',
   description: 'OpsManual Pro terms of service, document license, and legal disclaimers.',
+  alternates: {
+    canonical: '/terms',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function TermsPage() {
